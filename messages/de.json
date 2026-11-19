@@ -52,10 +52,10 @@
   },
   "hero": {
     "alt": "Wartezimmer der Praxis mit orangefarbenen Stühlen, Pflanzen und Blick zur Anmeldung",
-    "title": "Gute Medizin beginnt mit Zuhören.",
-    "lede": "Vier Ärzte für Allgemein- und Innere Medizin in der Müllerstraße 138. Wir behandeln akute Beschwerden, begleiten chronische Erkrankungen und kümmern uns um Ihre Vorsorge – auf Deutsch, Englisch und Arabisch.",
+    "title": "<l>Medizin mit Vertrauen.</l> <l>Menschlich. Kompetent. Nah.</l>",
+    "lede": "Ihre Hausarztpraxis in der Müllerstraße 138: persönliche Betreuung und moderne Medizin – bei akuten Beschwerden, Vorsorge und chronischen Erkrankungen wie Diabetes, Bluthochdruck, Asthma oder COPD. Labor, EKG und Lungenfunktion direkt vor Ort.",
     "book": "Termin online buchen",
-    "bookNote": "Online-Buchung über Doctolib, ohne Konto oder App. Sie erhalten eine Bestätigung per E-Mail.",
+    "bookNote": "In wenigen Minuten über Doctolib gebucht – ohne Konto, ohne App. Die Bestätigung kommt per E-Mail.",
     "team": "Unser Ärzteteam kennenlernen",
     "insurance": "Alle Kassen und Privat",
     "insuranceHint": "Versichertenkarte bitte mitbringen",

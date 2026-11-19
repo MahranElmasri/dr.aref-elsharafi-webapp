@@ -29,7 +29,7 @@ export async function Hero({ builtAt }: { builtAt: number }) {
             placeholder="blur"
           />
           <div className="hero-panel">
-            <h1>{t("title")}</h1>
+            <h1>{t.rich("title", { l: (c) => <span className="hero-line">{c}</span> })}</h1>
             <p className="lede">{t.rich("lede", { bdi: (c) => <bdi>{c}</bdi> })}</p>
             <div className="hero-actions">
               <a className="btn btn-primary" href={practice.doctolibUrl} target="_blank" rel="noopener">
