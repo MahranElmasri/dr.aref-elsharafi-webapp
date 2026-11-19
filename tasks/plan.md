@@ -71,7 +71,7 @@ T14 images · T15 e2e/axe · T16 Lighthouse + preview deploy (after all)
 - [ ] Review with human
 
 ### Phase 4: Contact, legal, quality
-- [ ] T12 Contact form, zod schema, server action, honeypot, rate limit
+- [x] T12 Contact form, zod schema, server action, honeypot, rate limit
 - [ ] T13 Impressum, Datenschutz, metadata, hreflang, sitemap, robots, JSON-LD
 - [ ] T14 Image pipeline: optimised hero and portraits, remove unused assets
 - [ ] T15 Playwright e2e and axe across locales and widths

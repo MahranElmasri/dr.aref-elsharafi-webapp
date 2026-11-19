@@ -222,5 +222,37 @@
     "stepFreeHint": "Bitte vorher anrufen, wenn Sie Hilfe brauchen",
     "transitTodo": "Verbindungen und Gehzeit bitte von der Praxis bestätigen lassen.",
     "firstTitle": "Zum ersten Termin mitbringen"
+  },
+  "contact": {
+    "title": "Schreiben Sie uns",
+    "intro": "Für organisatorische Fragen, Rückmeldungen oder Anfragen, die nicht eilig sind. Wir antworten in der Regel innerhalb von zwei Werktagen.",
+    "urgent": "Eilig oder Termin am selben Tag? Bitte rufen Sie an.",
+    "noHealth": "Bitte senden Sie keine Beschwerden, Befunde oder andere Gesundheitsdaten über dieses Formular.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "optional": "(optional)",
+    "topic": "Anliegen",
+    "topics": {
+      "general": "Allgemeine Frage",
+      "appointment": "Termin und Organisation",
+      "feedback": "Rückmeldung zur Praxis",
+      "other": "Sonstiges"
+    },
+    "message": "Ihre Nachricht",
+    "messageHint": "Bitte keine medizinischen Details.",
+    "consent": "Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden. Details in der",
+    "privacy": "Datenschutzerklärung",
+    "send": "Nachricht senden",
+    "errName": "Bitte geben Sie Ihren Namen ein.",
+    "errEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de.",
+    "errMsg": "Bitte schreiben Sie eine Nachricht.",
+    "errOk": "Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.",
+    "done": "Danke! Ihre Nachricht ist angekommen. Wir antworten in der Regel innerhalb von zwei Werktagen.",
+    "sending": "Wird gesendet …",
+    "errSend": "Die Nachricht konnte gerade nicht gesendet werden. Bitte rufen Sie uns an:",
+    "errRate": "Sie haben gerade mehrere Nachrichten gesendet. Bitte versuchen Sie es später erneut oder rufen Sie uns an.",
+    "errPhone": "Bitte geben Sie nur Ziffern, Leerzeichen und + ( ) / - ein.",
+    "errTopic": "Bitte wählen Sie ein Anliegen."
   }
 }

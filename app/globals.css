@@ -590,3 +590,40 @@
   ul.check svg { width: 16px; height: 16px; color: var(--color-primary); }
 
 }
+
+@layer components {
+  /* Contact form */
+  .contact-card { margin-top: var(--spacing-24); display: grid; gap: var(--spacing-32); }
+  @media (min-width: 900px) { .contact-card { grid-template-columns: 0.8fr 1.2fr; gap: var(--spacing-48, 48px); } }
+  .contact-intro p { color: var(--color-stone); }
+  .cf-notes { list-style: none; padding: 0; margin: var(--spacing-24) 0 0; display: grid; gap: 12px; }
+  .cf-notes li { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; padding: 12px 14px; border-radius: 12px; background: var(--color-cream); font-size: var(--text-body-sm); }
+  .cf-notes li span { flex: 1 1 12em; }
+  .cf-notes svg { width: 18px; height: 18px; flex: none; color: var(--color-primary); margin-top: 2px; }
+  .cf-notes a { font-weight: 600; color: var(--color-primary); }
+  .cf { display: grid; gap: var(--spacing-16); min-width: 0; }
+  .cf-row { display: grid; gap: var(--spacing-16); }
+  @media (min-width: 600px) { .cf-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .cf-field { display: grid; gap: 6px; min-width: 0; }
+  .cf label { font-weight: 500; font-size: var(--text-body-sm); }
+  .cf .opt { color: var(--color-stone); font-weight: 400; }
+  .cf input:not([type="checkbox"]), .cf select, .cf textarea {
+    font: inherit; font-size: 16px; color: var(--color-deep-ink); width: 100%; min-height: 48px; padding: 10px 14px;
+    background: var(--color-pure-white); border: 1px solid rgb(11 43 46 / 0.22); border-radius: 12px;
+  }
+  .cf textarea { resize: vertical; min-height: 128px; }
+  .cf input:hover, .cf select:hover, .cf textarea:hover { border-color: rgb(11 43 46 / 0.4); }
+  .cf [aria-invalid="true"] { border-color: var(--color-alert) !important; }
+  .cf-hint { font-size: var(--text-caption); color: var(--color-stone); margin: 0; }
+  .cf .field-error { margin: 0; }
+  .cf-consent { display: flex; gap: 12px; align-items: flex-start; }
+  .cf-consent input { width: 22px; height: 22px; margin: 1px 0 0; flex: none; accent-color: var(--color-primary); }
+  .cf-consent label { font-weight: 400; color: var(--color-stone); line-height: 1.5; }
+  .cf-consent a { color: var(--color-primary); }
+  .cf .btn { justify-self: start; }
+  .cf-status:empty { display: none; }
+  .cf-status { margin: 0; padding: 12px 14px; border-radius: 12px; background: var(--color-tint); color: var(--color-deep-ink); }
+  /* Honeypot: off-screen, not display:none, so simple bots still fill it */
+  .hp { position: absolute; inset-inline-start: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .cf .btn:disabled { opacity: .6; cursor: progress; }
+}

@@ -165,9 +165,10 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T12: Contact form
 **Description:** Port the form (topics, consent, no-health-data notes). Validate with a shared zod schema on client and server. Server action with honeypot, minimum fill time and a simple rate limit, calling `sendContact()`; provider wired once chosen.
 **Acceptance criteria:**
-- [ ] Server rejects missing fields, bad email, missing consent, honeypot hits
-- [ ] Errors show next to fields; focus moves to the first invalid one
-- [ ] Nothing is persisted; message body never logged in production
+- [x] Server rejects missing fields, bad email, missing consent, honeypot hits
+- [x] Errors show next to fields; focus moves to the first invalid one
+- [x] Nothing is persisted; message body never logged in production
+**Done 2026-11-19:** 16 tests written first (`tests/unit/contact.test.ts`). The schema in `lib/contactSchema.ts` is shared by the browser and the server action (`app/[locale]/actions.ts` calls `handleContact` in `lib/contact.ts`). Bots (honeypot filled, or under 3 s fill time measured in the browser) get a fake success and nothing is sent. Limit: 5 messages per address per 10 min, per instance. When sending fails, the values come back and the visitor is asked to call. The submit button is disabled until JavaScript runs, so a visitor without JS cannot lose a message silently. `sendContact` has no provider yet: dev logs topic and length only; production returns a failure and logs one line without content. Checked in Chrome (DE, AR): empty submit shows 4 errors with focus on Name; a bad email shows only that error; a valid submit shows the "please call" message and keeps the input.
 **Verification:** `pnpm test` (schema + action unit tests); manual submit.
 **Dependencies:** T4
 **Files:** `lib/contact.ts`, `app/[locale]/actions.ts`, `components/home/ContactForm.tsx`, `tests/unit/contact.test.ts`

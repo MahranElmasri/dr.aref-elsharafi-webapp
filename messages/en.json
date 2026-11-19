@@ -222,5 +222,37 @@
     "stepFreeHint": "Please call ahead if you need help",
     "transitTodo": "Connections and walking time to be confirmed by the practice.",
     "firstTitle": "Bring to your first appointment"
+  },
+  "contact": {
+    "title": "Write to us",
+    "intro": "For organisational questions, feedback or requests that aren't urgent. We usually reply within two working days.",
+    "urgent": "Urgent, or need an appointment today? Please call.",
+    "noHealth": "Please don't send symptoms, test results or other health information through this form.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "optional": "(optional)",
+    "topic": "Topic",
+    "topics": {
+      "general": "General question",
+      "appointment": "Appointments and organisation",
+      "feedback": "Feedback about the practice",
+      "other": "Other"
+    },
+    "message": "Your message",
+    "messageHint": "Please leave out medical details.",
+    "consent": "I agree that my details are processed to answer my request. Details in the",
+    "privacy": "Privacy policy",
+    "send": "Send message",
+    "errName": "Please enter your name.",
+    "errEmail": "Please enter a valid email address, e.g. name@example.com.",
+    "errMsg": "Please write a message.",
+    "errOk": "Please agree to the processing of your details.",
+    "done": "Thank you! Your message has arrived. We usually reply within two working days.",
+    "sending": "Sending …",
+    "errSend": "Your message could not be sent right now. Please call us:",
+    "errRate": "You have just sent several messages. Please try again later or call us.",
+    "errPhone": "Please use only digits, spaces and + ( ) / -.",
+    "errTopic": "Please choose a topic."
   }
 }

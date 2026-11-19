@@ -10,7 +10,7 @@ import { fontVariables } from "../fonts";
 import "../globals.css";
 
 // Namespaces read by "use client" components (Header, LanguageSwitch, live status, CareFinder).
-const CLIENT_NAMESPACES = ["common", "lang", "langShort", "brand", "nav", "footer", "status", "days", "care"] as const;
+const CLIENT_NAMESPACES = ["common", "lang", "langShort", "brand", "nav", "footer", "status", "days", "care", "contact"] as const;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

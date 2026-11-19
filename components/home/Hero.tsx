@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { practice } from "@/content/practice";
 import { AlertLineIcon, CalendarIcon, ChatIcon, PhoneIcon, PinIcon, ShieldIcon } from "@/components/icons";
-import hero from "@/public/assets/hero2.jpg";
+import hero from "@/public/assets/hero.jpg";
 import aref from "@/public/assets/dr.aref.jpg";
 import nahas from "@/public/assets/dr.nahas.jpg";
 import zoghbi from "@/public/assets/dr.zoghbi.jpg";
@@ -24,7 +24,8 @@ export async function Hero({ builtAt }: { builtAt: number }) {
             src={hero}
             alt={t("alt")}
             priority
-            sizes="(min-width: 1280px) 1136px, calc(100vw - 32px)"
+            quality={85}
+            sizes="(min-width: 1280px) 1136px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)"
             placeholder="blur"
           />
           <div className="hero-panel">
