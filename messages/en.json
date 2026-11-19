@@ -30,21 +30,12 @@
     "book": "Book appointment"
   },
   "notice": {
-    "label": "Notice"
+    "label": "Notice",
+    "closedTitle": "Practice closed"
   },
   "footer": {
     "pages": "Pages",
     "hours": "Opening hours",
-    "closed": "closed",
-    "days": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
     "emTitle": "In an emergency",
     "em112": "Life-threatening emergency: ambulance",
     "em116": "Outside opening hours: on-call doctor service",
@@ -57,5 +48,40 @@
     "de": "DE",
     "en": "EN",
     "ar": "عربي"
-  }
+  },
+  "hero": {
+    "alt": "The practice waiting room with orange chairs, plants and a view of reception",
+    "title": "Good medicine starts with listening.",
+    "lede": "Four doctors in general and internal medicine at Müllerstraße 138. We treat acute illness, look after chronic conditions and take care of your check-ups – in German, English and Arabic.",
+    "book": "Book online",
+    "bookNote": "Book through Doctolib without an account or app. You get a confirmation by email.",
+    "team": "Meet our doctors",
+    "insurance": "All public and private insurance",
+    "insuranceHint": "Please bring your insurance card",
+    "access": "Step-free access",
+    "languages": "German, English, Arabic",
+    "languagesHint": "Languages spoken in consultations",
+    "emAfter": "Outside opening hours",
+    "emLife": "emergency",
+    "listSep": ", "
+  },
+  "status": {
+    "title": "Opening hours",
+    "openUntil": "Open until {time}",
+    "closedNow": "Closed now",
+    "lunch": "Lunch break – open again at {time}",
+    "reopens": "Opens again {day} at {time}",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "closed": "closed"
+  },
+  "days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ]
 }

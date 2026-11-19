@@ -7,7 +7,7 @@ import { navItems } from "./navItems";
 
 export async function Footer() {
   const t = await getTranslations();
-  const days = t.raw("footer.days") as string[];
+  const days = t.raw("days") as string[];
 
   return (
     <footer className="site">
@@ -39,7 +39,7 @@ export async function Footer() {
             </ul>
           </div>
           <div>
-            <h2>{t("footer.hours")}</h2>
+            <h2>{t("status.title")}</h2>
             <ul className="foot-hours">
               {weekdays.map((d) => {
                 const sessions = openingHours[d];
@@ -56,7 +56,7 @@ export async function Footer() {
                         ))}
                       </span>
                     ) : (
-                      <span className="closed">{t("footer.closed")}</span>
+                      <span className="closed">{t("status.closed")}</span>
                     )}
                   </li>
                 );

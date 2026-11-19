@@ -67,8 +67,9 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T5: Hours logic (TDD)
 **Description:** Write `lib/hours.ts` with `getStatus(now, hours, closures)` returning `{ open, until?, lunch?, next?, day }` in Europe/Berlin. Write the Vitest cases first.
 **Acceptance criteria:**
-- [ ] Tests cover: open morning, lunch break, Wednesday after 14:00, Friday after 13:00, weekend, closure covering today, closure ending tomorrow, both 2026 DST change days
-- [ ] No dependency on the machine's local timezone (tests run with `TZ=UTC` and `TZ=Asia/Tokyo`)
+- [x] Tests cover: open morning, lunch break, Wednesday after 14:00, Friday after 13:00, weekend, closure covering today, closure ending tomorrow, both 2026 DST change days
+- [x] No dependency on the machine's local timezone (tests run with `TZ=UTC` and `TZ=Asia/Tokyo`)
+**Done 2026-11-19:** 17 tests, red then green; `pnpm test:tz` runs them under UTC and Tokyo. Berlin date/time via `Intl.DateTimeFormat`; day offsets use calendar-date arithmetic, so 23/25-hour days don't shift them. `Closure = { from, to, message }`, both dates inclusive.
 **Verification:** `pnpm test`
 **Dependencies:** T1
 **Files:** `lib/hours.ts`, `tests/unit/hours.test.ts`
@@ -77,28 +78,30 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T6: Content layer
 **Description:** Add `content/schema.ts` (zod schemas, `Localized` type, `pick()` fallback helper) and the files `practice.ts`, `hours.ts`, `closures.ts`, `notice.ts` seeded from the sample. Wire `check:content` and run validation in the build. The notice bar reads `notice` and active `closures`.
 **Acceptance criteria:**
-- [ ] An invalid entry (e.g. missing `de`) fails `pnpm check:content` and `pnpm build`
-- [ ] A closure with future dates shows only within its range (unit test with mocked dates)
-- [ ] `pick()` falls back to `de`
+- [x] An invalid entry (e.g. missing `de`) fails `pnpm check:content` and `pnpm build`
+- [x] A closure with future dates shows only within its range (unit test with mocked dates)
+- [x] `pick()` falls back to `de`
+**Done 2026-11-19:** zod 4.6.7. Content files call `schema.parse` on import, so `check:content` (a Vitest file) and `next build` both fail on bad data (checked with a broken time). Notice bar filters by today's Berlin date in the browser via `useNowMinute` (`useSyncExternalStore`, build time as server snapshot), so future closures switch on by themselves (checked in Chrome). No `scripts/check-content.ts` needed.
 **Verification:** standard; break one field on purpose and confirm the build fails.
 **Dependencies:** T5
-**Files:** `content/schema.ts`, `content/{practice,hours,closures,notice}.ts`, `scripts/check-content.ts`, `tests/unit/content.test.ts`
+**Files:** `content/schema.ts`, `content/{practice,hours,closures,notice}.ts`, `lib/notices.ts`, `lib/useBerlinNow.ts`, `tests/unit/content.test.ts`
 **Scope:** M
 
 ### T7: Hero, info bar and week strip
 **Description:** Port the hero (rounded photo, translucent panel, CTAs, doctor faces), the five-item info bar and the "Sprechzeiten" week strip. A small client island computes status from `lib/hours.ts` and refreshes each minute.
 **Acceptance criteria:**
-- [ ] Matches the sample at 375/800/1280 in DE and AR
-- [ ] Status text correct for mocked open, lunch and closed times
-- [ ] Hero image uses `next/image` with `priority` and responsive sizes
+- [x] Matches the sample at 375/800/1280 in DE and AR
+- [ ] Status text correct for mocked open, lunch and closed times (logic covered by 17 unit tests; live "closed, reopens tomorrow" checked in Chrome; mocked-clock UI check moves to T15 Playwright)
+- [x] Hero image uses `next/image` with `priority` and responsive sizes
+**Done 2026-11-19:** Hero and info bar are server components; `HeroStatus` and `WeekStrip` are client islands sharing `useLiveStatus` (build time as server snapshot, then the browser clock, re-checked each minute). Hero served as WebP (145 KB at 1200 px). No hydration errors; no horizontal scroll at 320/375 in DE/EN/AR. Day names moved to the shared `days` message key.
 **Verification:** standard; screenshots; mocked-clock check.
 **Dependencies:** T4, T6
 **Files:** `components/home/{Hero,InfoBar,WeekStrip,LiveStatus}.tsx`, `app/[locale]/page.tsx`, `public/assets/hero2*.jpg`
 **Scope:** M
 
 ## Checkpoint B: First vertical slice
-- [ ] Unit tests green
-- [ ] Hero and status correct in all locales
+- [x] Unit tests green
+- [x] Hero and status correct in all locales
 - [ ] Review with human
 
 ---

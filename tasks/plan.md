@@ -50,13 +50,13 @@ T14 images · T15 e2e/axe · T16 Lighthouse + preview deploy (after all)
 - [ ] Review with human
 
 ### Phase 2: Data and first slice
-- [ ] T5 `lib/hours.ts` getStatus with Vitest (TDD)
-- [ ] T6 Content schemas, practice/hours/closures/notice files, `check:content`
-- [ ] T7 Hero, info bar and week strip with live status
+- [x] T5 `lib/hours.ts` getStatus with Vitest (TDD)
+- [x] T6 Content schemas, practice/hours/closures/notice files, `check:content`
+- [x] T7 Hero, info bar and week strip with live status
 
 ### Checkpoint B: First vertical slice
-- [ ] Unit tests green, including DST and closure cases
-- [ ] Hero and status match the sample in all three locales
+- [x] Unit tests green, including DST and closure cases
+- [x] Hero and status match the sample in all three locales
 - [ ] Review with human
 
 ### Phase 3: Home sections
