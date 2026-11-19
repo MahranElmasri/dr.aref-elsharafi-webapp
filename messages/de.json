@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Ärztezentrum Dr. Sharafi und Kollegen",
-    "description": "Hausarztpraxis in Berlin-Wedding"
+    "title": "Hausarzt in Berlin-Wedding – Ärztezentrum Dr. Sharafi und Kollegen",
+    "description": "Hausarztpraxis in der Müllerstraße 138, Berlin-Wedding. Alle Kassen und privat, barrierefrei, Termine online über Doctolib. Wir sprechen Deutsch, Englisch und Arabisch.",
+    "siteName": "Ärztezentrum Dr. Sharafi und Kollegen"
   },
   "common": {
     "skip": "Zum Inhalt springen",
@@ -254,5 +255,11 @@
     "errRate": "Sie haben gerade mehrere Nachrichten gesendet. Bitte versuchen Sie es später erneut oder rufen Sie uns an.",
     "errPhone": "Bitte geben Sie nur Ziffern, Leerzeichen und + ( ) / - ein.",
     "errTopic": "Bitte wählen Sie ein Anliegen."
+  },
+  "legal": {
+    "imprintTitle": "Impressum",
+    "privacyTitle": "Datenschutzerklärung",
+    "draft": "Entwurf: Die Praxis muss diesen Text prüfen und die markierten Stellen ergänzen, bevor die Website online geht.",
+    "germanOnly": ""
   }
 }

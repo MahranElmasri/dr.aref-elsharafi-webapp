@@ -9,13 +9,16 @@ import { Tasks } from "@/components/home/Tasks";
 import { Visit } from "@/components/home/Visit";
 import { Team } from "@/components/home/Team";
 import { WeekStrip } from "@/components/home/WeekStrip";
+import type { Locale } from "@/i18n/routing";
 import { BUILT_AT } from "@/lib/buildTime";
+import { clinicJsonLd, jsonLdString } from "@/lib/seo";
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
     <main id="inhalt">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(clinicJsonLd(locale as Locale)) }} />
       <Hero builtAt={BUILT_AT} />
       <WeekStrip builtAt={BUILT_AT} />
       <Tasks />

@@ -177,8 +177,9 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T13: Legal pages and SEO
 **Description:** Impressum and Datenschutz pages (placeholder text clearly marked until the practice supplies it), `generateMetadata` per locale, hreflang alternates, sitemap, robots, JSON-LD `MedicalClinic` with opening hours and `Physician` entries.
 **Acceptance criteria:**
-- [ ] JSON-LD validates in a schema validator
-- [ ] Each locale has correct `lang`, canonical and alternates
+- [ ] JSON-LD validates in a schema validator (local checks done; run validator.schema.org against the preview URL in T16)
+- [x] Each locale has correct `lang`, canonical and alternates
+**Done 2026-11-19 (except the external validator):** Canonical domain `https://berlin-hausaerzte.de` (user decision); `aerztezentrum-sharafi.de` should redirect there (T16). `lib/seo.ts` builds canonical + hreflang (de, en, ar, x-default) for `/`, `/impressum`, `/datenschutz`; 5 tests. Sitemap has 9 URLs with alternates. Preview builds: `robots.txt` disallows all and pages carry `noindex`; production (`VERCEL_ENV=production`): allow + sitemap, no robots meta. JSON-LD `MedicalClinic` on the home page with grouped opening hours, closures as special hours, Doctolib `ReserveAction` and the four doctors as `Physician` members; `<` is escaped. Legal pages are German drafts (DDG/MStV and the site's real processing: Vercel fra1 hosting, no cookies, contact form, click-to-load Google Maps); every missing fact is highlighted `[…]` and a draft banner shows. EN/AR show a "German only" note. Fixed a class clash: the footer already used `.legal`.
 **Verification:** standard; view source; validator.
 **Dependencies:** T6
 **Files:** `app/[locale]/{impressum,datenschutz}/page.tsx`, `app/sitemap.ts`, `app/robots.ts`, `lib/seo.ts`

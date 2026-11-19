@@ -96,6 +96,6 @@ T14 images · T15 e2e/axe · T16 Lighthouse + preview deploy (after all)
 ## Open questions (from SPEC.md)
 
 1. Email provider for the contact form (blocks wiring in T12, not the task).
-2. Canonical domain (needed by T13 metadata and sitemap).
+2. ~~Canonical domain~~ Decided 2026-11-19: https://berlin-hausaerzte.de (aerztezentrum-sharafi.de redirects).
 3. Who owns the Vercel project and domain (needed by T16).
 4. Practice sign-off items and native-speaker review (block launch, not build).

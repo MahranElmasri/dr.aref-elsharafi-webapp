@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Ärztezentrum Dr. Sharafi und Kollegen",
-    "description": "GP practice in Berlin-Wedding"
+    "title": "Family doctor in Berlin-Wedding – Ärztezentrum Dr. Sharafi und Kollegen",
+    "description": "GP practice at Müllerstraße 138, Berlin-Wedding. All statutory and private insurance, step-free access, online booking via Doctolib. We speak German, English and Arabic.",
+    "siteName": "Ärztezentrum Dr. Sharafi and colleagues"
   },
   "common": {
     "skip": "Skip to content",
@@ -254,5 +255,11 @@
     "errRate": "You have just sent several messages. Please try again later or call us.",
     "errPhone": "Please use only digits, spaces and + ( ) / -.",
     "errTopic": "Please choose a topic."
+  },
+  "legal": {
+    "imprintTitle": "Legal notice (Impressum)",
+    "privacyTitle": "Privacy policy",
+    "draft": "Draft: the practice must review this text and fill in the marked parts before the site goes live.",
+    "germanOnly": "This page is available in German only. The German text is the legally binding version."
   }
 }

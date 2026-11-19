@@ -53,6 +53,13 @@
   --font-serif: var(--font-noto-naskh), var(--font-source-serif), serif;
   --font-sans: var(--font-plex-arabic), var(--font-dm-sans), system-ui, sans-serif;
 }
+/* German passages inside Arabic pages (legal texts) keep the Latin faces */
+:lang(ar) [lang="de"] {
+  --font-serif: var(--font-source-serif), var(--font-noto-naskh), Georgia, serif;
+  --font-sans: var(--font-dm-sans), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
 
 @layer base {
   html { -webkit-text-size-adjust: 100%; scroll-padding-top: 7rem; }
@@ -291,7 +298,6 @@
   .today-head h2 { font-size: var(--text-heading-sm); line-height: 1.2; }
   .status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 6px 0 0; font-size: var(--text-body-sm); }
   .status-text { font-weight: 600; }
-  .status-sub { color: var(--color-stone); }
   .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; background: var(--color-dot-off); position: relative; }
   .dot.open { background: var(--color-forest); }
   .dot.open::after {
@@ -304,16 +310,24 @@
   .week li { display: grid; grid-template-columns: 7rem 1fr; gap: 12px; padding: 8px 14px; border-radius: 12px; font-variant-numeric: tabular-nums; font-size: var(--text-body-sm); }
   .week li.is-today { background: var(--color-tint); font-weight: 600; }
   .week li .closed { color: var(--color-stone); }
-  .week br { display: none; }
+  /* One session per line at every width; the comma between them is screen-reader only. */
+  .week .nw { display: block; }
+  .today-tag {
+    display: inline-block; margin-inline-start: 8px; padding: 0 8px; border-radius: var(--radius-pill);
+    background: var(--color-primary); color: var(--color-pure-white); font-size: var(--text-caption); font-weight: 600; line-height: 1.6;
+  }
   @media (min-width: 1024px) {
-    .today { grid-template-columns: 13rem 1fr; align-items: center; gap: var(--spacing-32); padding: var(--spacing-24) var(--spacing-32); }
+    /* 1024–1199: head stacks above the week so each day column stays ~125px wide. */
+    .today { padding: var(--spacing-24) var(--spacing-32); }
     .week { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
     .week li { grid-template-columns: 1fr; gap: 4px; padding: 12px; text-align: center; }
-    .week br { display: inline; }
-    .week .sep { display: none; }
     .week li > span:first-child { color: var(--color-stone); font-size: var(--text-caption); }
     .week li.is-today > span:first-child { color: var(--color-primary-hover); }
+    .today-tag { display: table; margin: 4px auto 0; }
     [dir="rtl"] .week li > .ltr { text-align: center !important; }
+  }
+  @media (min-width: 1200px) {
+    .today { grid-template-columns: 13rem 1fr; align-items: center; gap: var(--spacing-32); }
   }
   [dir="rtl"] .week li > .ltr { text-align: right; }
 
@@ -626,4 +640,17 @@
   /* Honeypot: off-screen, not display:none, so simple bots still fill it */
   .hp { position: absolute; inset-inline-start: -10000px; width: 1px; height: 1px; overflow: hidden; }
   .cf .btn:disabled { opacity: .6; cursor: progress; }
+}
+
+@layer components {
+  /* Legal pages */
+  .legal-page { max-width: 72ch; }
+  .legal-page h1 { font-size: var(--text-heading); line-height: 1.2; margin-bottom: var(--spacing-24); }
+  .legal-page .todo, .legal-note { margin-bottom: var(--spacing-24); }
+  .legal-page .todo { background: var(--color-sample-bg); color: var(--color-sample); }
+  .legal-note { color: var(--color-stone); }
+  .legal-body h2 { font-family: var(--font-sans); font-size: var(--text-subheading); font-weight: 600; margin: var(--spacing-32) 0 var(--spacing-8); }
+  .legal-body p { margin: 0 0 var(--spacing-16); line-height: 1.65; }
+  .legal-body a { color: var(--color-primary); }
+  .fill { background: var(--color-sample-bg); color: var(--color-sample); padding: 0 4px; border-radius: 4px; }
 }

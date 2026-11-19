@@ -6,6 +6,7 @@ import { dirFor, routing } from "@/i18n/routing";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { NoticeBar } from "@/components/layout/NoticeBar";
+import { alternatesFor, localeUrl, SITE_URL } from "@/lib/seo";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 
@@ -16,10 +17,27 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const ogLocale = { de: "de_DE", en: "en_GB", ar: "ar" } as const;
+
 export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "meta" });
-  return { title: t("title"), description: t("description") };
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: t("title"), template: `%s – ${t("siteName")}` },
+    description: t("description"),
+    alternates: alternatesFor(locale, "/"),
+    openGraph: {
+      type: "website",
+      siteName: t("siteName"),
+      locale: ogLocale[locale],
+      url: localeUrl(locale, "/"),
+      images: [{ url: "/assets/hero.jpg", width: 1774, height: 887 }],
+    },
+    // Preview deployments stay out of search results.
+    robots: process.env.VERCEL_ENV === "production" ? undefined : { index: false, follow: false },
+  };
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
