@@ -59,7 +59,9 @@ export async function handleContact(fd: FormData, { ip, now, send }: Context): P
  * is told to call instead of believing the message arrived.
  */
 export async function sendContact(m: ContactMessage): Promise<boolean> {
-  if (process.env.NODE_ENV !== "production") {
+  // CONTACT_TEST_SINK lets the e2e suite see the success path; it never applies on the live site.
+  const testSink = process.env.CONTACT_TEST_SINK === "1" && process.env.VERCEL_ENV !== "production";
+  if (process.env.NODE_ENV !== "production" || testSink) {
     console.info(`[contact] dev: would send topic=${m.topic} length=${m.message.length}`);
     return true;
   }

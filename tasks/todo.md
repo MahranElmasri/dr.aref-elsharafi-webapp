@@ -188,8 +188,9 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T14: Images
 **Description:** Move used images to `public/assets`, serve through `next/image` (AVIF/WebP), set portrait focus, delete unused files (`hero.png`, `hero.jpg`, `praxis.webp`, duplicate PNG) after confirming.
 **Acceptance criteria:**
-- [ ] Hero LCP image ≤ 200 KB on mobile
-- [ ] No unused image in `public/`
+- [x] Hero LCP image ≤ 200 KB on mobile
+- [x] No unused image in `public/`
+**Done 2026-11-19:** AVIF enabled (`images.formats`), WebP fallback. Hero at q85: 23 KB (640w), 35 KB (828w), 54 KB (1080w) AVIF; WebP 51/78/120 KB. Portraits 6 KB at 384w. `public/` holds only the hero and four portraits, all used. Images were already in `public/assets` with `next/image` and the portrait focus (`object-position: 50% 12%`) from T7/T10. The 10 unused originals in `design/assets` (~18 MB, not shipped) are kept until the user decides.
 **Verification:** build output; Lighthouse image audit.
 **Dependencies:** T7, T10
 **Files:** `public/assets/*`, components using images
@@ -198,8 +199,9 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T15: E2E and accessibility suite
 **Description:** Playwright specs for the flows in SPEC.md Testing Strategy at 320/768/1024/1440 in all locales, plus axe scans.
 **Acceptance criteria:**
-- [ ] All specs green; axe 0 violations
-- [ ] Request log proves no third-party origin before consent
+- [x] All specs green; axe 0 violations
+- [x] Request log proves no third-party origin before consent
+**Done 2026-11-19:** `pnpm test:e2e` builds, then runs 30 Playwright specs in the installed Chrome (`channel: "chrome"`, no browser download), browser timezone Asia/Tokyo. Covered: lang/dir, no horizontal scroll and axe (WCAG 2.2 AA tags) at 320/768/1024/1440 for `/`, `/en`, `/ar`; axe on the legal pages; Doctolib links in a new tab; language switch keeps `#kontakt`; skip link; status under a mocked clock (open, lunch, closed with "morgen", weekend with "Montag"); request log has only the site's own origin until "Karte laden", then the localized iframe; contact errors, focus and success; slider buttons, dots and keys in LTR and RTL; FAQ with Enter/Space; care finder. axe found and we fixed three issues: U6 badge contrast (`#7e60a0`, 5.2:1), the privacy link in the consent text now underlined, and language links now include the visible code in their name ("DE – Deutsch"). The success path uses `CONTACT_TEST_SINK=1`, which is ignored when `VERCEL_ENV=production`. Deps: @playwright/test 1.64.1, @axe-core/playwright 4.14.0 (spec-listed; versions over two weeks old).
 **Verification:** `pnpm test:e2e`
 **Dependencies:** T7–T13
 **Files:** `playwright.config.ts`, `e2e/*.spec.ts`

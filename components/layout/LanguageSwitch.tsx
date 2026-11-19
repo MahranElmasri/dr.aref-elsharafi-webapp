@@ -19,7 +19,6 @@ export function LanguageSwitch({ className = "lang" }: { className?: string }) {
           locale={locale}
           lang={locale}
           hrefLang={locale}
-          aria-label={t(`lang.${locale}`)}
           aria-current={locale === current ? "true" : undefined}
           onClick={(e) => {
             // A locale change swaps <html lang dir>, which needs a full load anyway.
@@ -30,7 +29,9 @@ export function LanguageSwitch({ className = "lang" }: { className?: string }) {
             window.location.assign(e.currentTarget.href + hash);
           }}
         >
+          {/* Visible short code first, so the accessible name contains it (WCAG 2.5.3). */}
           {t(`langShort.${locale}`)}
+          <span className="sr-only"> – {t(`lang.${locale}`)}</span>
         </Link>
       ))}
     </div>

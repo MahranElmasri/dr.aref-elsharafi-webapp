@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
-    "test:e2e": "echo 'e2e suite arrives in T15' && exit 0",
+    "test:e2e": "next build && playwright test",
     "check:content": "vitest run tests/unit/content.test.ts",
     "test:tz": "TZ=UTC vitest run && TZ=Asia/Tokyo vitest run"
   },
@@ -21,6 +21,8 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
     "@tailwindcss/turbopack": "4.3.5",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
