@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Ärztezentrum Dr. Sharafi und Kollegen",
+    "description": "Hausarztpraxis in Berlin-Wedding"
+  },
+  "common": {
+    "skip": "Zum Inhalt springen",
+    "langLabel": "Sprache wählen",
+    "notFound": "Diese Seite gibt es nicht.",
+    "backHome": "Zur Startseite"
+  },
+  "lang": {
+    "de": "Deutsch",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "brand": {
+    "name": "Ärztezentrum Dr. Sharafi und Kollegen",
+    "sub": "Hausarztpraxis in Berlin-Wedding"
+  },
+  "nav": {
+    "label": "Hauptnavigation",
+    "services": "Leistungen",
+    "care": "Vorsorge",
+    "team": "Team",
+    "contact": "Kontakt",
+    "faq": "Häufige Fragen",
+    "menu": "Menü",
+    "call": "Anrufen",
+    "book": "Termin buchen"
+  },
+  "notice": {
+    "label": "Hinweis"
+  },
+  "footer": {
+    "pages": "Seiten",
+    "hours": "Sprechzeiten",
+    "closed": "geschlossen",
+    "days": [
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag",
+      "Sonntag"
+    ],
+    "emTitle": "Im Notfall",
+    "em112": "Lebensbedrohlicher Notfall: Rettungsdienst",
+    "em116": "Außerhalb der Sprechzeiten: Ärztlicher Bereitschaftsdienst",
+    "em19240": "Vergiftung: Giftnotruf Berlin",
+    "imprint": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "newTab": "(öffnet in neuem Tab)"
+  },
+  "langShort": {
+    "de": "DE",
+    "en": "EN",
+    "ar": "عربي"
+  }
+}

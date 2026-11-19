@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Ärztezentrum Dr. Sharafi und Kollegen",
+    "description": "GP practice in Berlin-Wedding"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "langLabel": "Choose language",
+    "notFound": "This page does not exist.",
+    "backHome": "Go to the home page"
+  },
+  "lang": {
+    "de": "Deutsch",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "brand": {
+    "name": "Ärztezentrum Dr. Sharafi and colleagues",
+    "sub": "Family practice in Berlin-Wedding"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "services": "Services",
+    "care": "Check-ups",
+    "team": "Team",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "menu": "Menu",
+    "call": "Call us",
+    "book": "Book appointment"
+  },
+  "notice": {
+    "label": "Notice"
+  },
+  "footer": {
+    "pages": "Pages",
+    "hours": "Opening hours",
+    "closed": "closed",
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "emTitle": "In an emergency",
+    "em112": "Life-threatening emergency: ambulance",
+    "em116": "Outside opening hours: on-call doctor service",
+    "em19240": "Poisoning: Berlin poison control",
+    "imprint": "Legal notice",
+    "privacy": "Privacy policy",
+    "newTab": "(opens in a new tab)"
+  },
+  "langShort": {
+    "de": "DE",
+    "en": "EN",
+    "ar": "عربي"
+  }
+}
