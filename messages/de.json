@@ -83,5 +83,144 @@
     "Freitag",
     "Samstag",
     "Sonntag"
-  ]
+  ],
+  "tasks": {
+    "title": "Wie können wir Ihnen helfen?",
+    "book": "Online buchen"
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "intro": "Von der Erkältung bis zur Langzeitbetreuung: Vieles klären wir direkt bei uns, ohne Umweg über andere Praxen.",
+    "careLink": "Zum Vorsorge-Finder"
+  },
+  "care": {
+    "title": "Welche Vorsorge steht für Sie an?",
+    "intro": "Geben Sie Ihr Alter ein. Sie sehen, welche Untersuchungen und Impfungen Ihre Krankenkasse übernimmt.",
+    "ageLabel": "Ihr Alter",
+    "ageUnit": "Jahre",
+    "ageError": "Bitte geben Sie ein Alter zwischen 18 und 110 ein.",
+    "note": "Kassenleistungen und Impfempfehlungen der STIKO, Stand 2025. Bei Vorerkrankungen gelten oft andere Abstände, sprechen Sie uns an. Ihre Eingabe wird nicht gespeichert oder gesendet.",
+    "book": "Vorsorgetermin buchen",
+    "exams": "Untersuchungen",
+    "vacc": "Impfungen",
+    "forWomen": "Für Frauen",
+    "forMen": "Für Männer",
+    "atPractice": "Bei uns in der Praxis",
+    "atSpecialist": "In einer Fachpraxis",
+    "count": "Mit {age} Jahren: {count} Empfehlungen",
+    "items": {
+      "checkupY": {
+        "title": "Gesundheits-Check-up",
+        "detail": "Einmal zwischen 18 und 34 Jahren."
+      },
+      "checkup": {
+        "title": "Gesundheits-Check-up",
+        "detail": "Alle 3 Jahre: Gespräch, Untersuchung, Blut- und Urinwerte."
+      },
+      "hep": {
+        "title": "Test auf Hepatitis B und C",
+        "detail": "Einmal, zusammen mit dem Check-up."
+      },
+      "skin": {
+        "title": "Hautkrebs-Screening",
+        "detail": "Alle 2 Jahre."
+      },
+      "bowel": {
+        "title": "Stuhltest auf verstecktes Blut",
+        "detail": "Von 50 bis 54 jährlich, ab 55 alle 2 Jahre."
+      },
+      "colon": {
+        "title": "Darmspiegelung",
+        "detail": "Ab 50, zweimal im Abstand von mindestens 10 Jahren."
+      },
+      "aorta": {
+        "title": "Ultraschall der Bauchschlagader",
+        "detail": "Einmal ab 65."
+      },
+      "cervix": {
+        "title": "Früherkennung Gebärmutterhalskrebs",
+        "detail": "Ab 20, der Abstand hängt vom Alter ab."
+      },
+      "breast": {
+        "title": "Mammographie-Screening",
+        "detail": "Von 50 bis 75 alle 2 Jahre, mit Einladung."
+      },
+      "prostate": {
+        "title": "Früherkennung Prostatakrebs",
+        "detail": "Jährlich ab 45."
+      },
+      "td": {
+        "title": "Tetanus und Diphtherie",
+        "detail": "Auffrischung alle 10 Jahre, einmal zusammen mit Keuchhusten."
+      },
+      "flu": {
+        "title": "Grippe",
+        "detail": "Jedes Jahr im Herbst."
+      },
+      "covid": {
+        "title": "COVID-19",
+        "detail": "Jährliche Auffrischung im Herbst."
+      },
+      "pneumo": {
+        "title": "Pneumokokken",
+        "detail": "Einmal ab 60."
+      },
+      "zoster": {
+        "title": "Gürtelrose",
+        "detail": "Zwei Impfungen im Abstand von 2 bis 6 Monaten."
+      },
+      "rsv": {
+        "title": "RSV",
+        "detail": "Einmal ab 75."
+      }
+    }
+  },
+  "steps": {
+    "title": "So läuft Ihr Besuch ab",
+    "intro": "Vier Schritte, damit Sie wissen, was Sie erwartet – auch beim ersten Mal."
+  },
+  "team": {
+    "title": "Unser Ärzteteam",
+    "intro": "Vier Ärzte mit unterschiedlichen Schwerpunkten und einer gemeinsamen Haltung: Wir nehmen uns Zeit für Ihre Fragen.",
+    "focusLabel": "Schwerpunkte",
+    "portraitOf": "Porträt von {name}"
+  },
+  "reviews": {
+    "title": "Was Patientinnen und Patienten sagen",
+    "intro": "Erfahrungen aus unserer Praxis – in ihren eigenen Worten.",
+    "carousel": "Bewertungen",
+    "prev": "Vorherige Bewertung",
+    "next": "Nächste Bewertung",
+    "slide": "{n} von {total}",
+    "goto": "Zu Bewertung {n} von {total}",
+    "stars": "{rating} von {max} Sternen",
+    "sample": "Beispieltext",
+    "sampleNote": "Platzhalter – wird durch echte, freigegebene Bewertungen ersetzt",
+    "footText": "Waren Sie bei uns? Ihre Bewertung hilft anderen Patientinnen und Patienten bei der Wahl ihrer Hausarztpraxis.",
+    "write": "Bewertung auf Google schreiben",
+    "read": "Alle Bewertungen lesen"
+  },
+  "faq": {
+    "title": "Häufige Fragen"
+  },
+  "visit": {
+    "title": "Ihr Besuch bei uns",
+    "addressTitle": "Adresse und Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "mapConsent": "Die Karte wird von Google Maps geladen. Dabei werden Daten wie Ihre IP-Adresse an Google übertragen.",
+    "mapLoad": "Karte laden",
+    "mapOpen": "In Google Maps öffnen",
+    "mapTitle": "Karte: Ärztezentrum Dr. Sharafi, Müllerstraße 138",
+    "transitTitle": "Anfahrt mit öffentlichen Verkehrsmitteln",
+    "lineU6": "U-Bahn U6",
+    "stopSee": "U Seestraße",
+    "walk1": "1–2 Minuten zu Fuß",
+    "tramLines": "Tram M13 und 50",
+    "tramStop": "Haltestelle U Seestraße",
+    "stepFree": "Barrierefreier Zugang",
+    "stepFreeHint": "Bitte vorher anrufen, wenn Sie Hilfe brauchen",
+    "transitTodo": "Verbindungen und Gehzeit bitte von der Praxis bestätigen lassen.",
+    "firstTitle": "Zum ersten Termin mitbringen"
+  }
 }

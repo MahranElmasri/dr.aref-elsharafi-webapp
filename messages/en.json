@@ -83,5 +83,144 @@
     "Friday",
     "Saturday",
     "Sunday"
-  ]
+  ],
+  "tasks": {
+    "title": "How can we help?",
+    "book": "Book online"
+  },
+  "services": {
+    "title": "Our services",
+    "intro": "From a cold to long-term care: we handle much of it right here, with no detour to other practices.",
+    "careLink": "Open the check-up finder"
+  },
+  "care": {
+    "title": "Which check-ups are due for you?",
+    "intro": "Enter your age to see which check-ups and vaccinations your statutory health insurance covers.",
+    "ageLabel": "Your age",
+    "ageUnit": "years",
+    "ageError": "Please enter an age between 18 and 110.",
+    "note": "Statutory insurance benefits and STIKO vaccination recommendations, as of 2025. Different intervals often apply if you have existing conditions, so please ask us. Your entry is not saved or sent.",
+    "book": "Book a check-up",
+    "exams": "Check-ups",
+    "vacc": "Vaccinations",
+    "forWomen": "For women",
+    "forMen": "For men",
+    "atPractice": "At our practice",
+    "atSpecialist": "At a specialist practice",
+    "count": "At {age}: {count} recommendations",
+    "items": {
+      "checkupY": {
+        "title": "Health check-up",
+        "detail": "Once between the ages of 18 and 34."
+      },
+      "checkup": {
+        "title": "Health check-up",
+        "detail": "Every 3 years: consultation, examination, blood and urine tests."
+      },
+      "hep": {
+        "title": "Hepatitis B and C test",
+        "detail": "Once, together with the check-up."
+      },
+      "skin": {
+        "title": "Skin cancer screening",
+        "detail": "Every 2 years."
+      },
+      "bowel": {
+        "title": "Stool test for hidden blood",
+        "detail": "Yearly from 50 to 54, every 2 years from 55."
+      },
+      "colon": {
+        "title": "Colonoscopy",
+        "detail": "From 50, twice, at least 10 years apart."
+      },
+      "aorta": {
+        "title": "Abdominal aorta ultrasound",
+        "detail": "Once from 65."
+      },
+      "cervix": {
+        "title": "Cervical cancer screening",
+        "detail": "From 20; the interval depends on your age."
+      },
+      "breast": {
+        "title": "Mammography screening",
+        "detail": "Every 2 years from 50 to 75, by invitation."
+      },
+      "prostate": {
+        "title": "Prostate cancer screening",
+        "detail": "Yearly from 45."
+      },
+      "td": {
+        "title": "Tetanus and diphtheria",
+        "detail": "Booster every 10 years, once combined with whooping cough."
+      },
+      "flu": {
+        "title": "Flu",
+        "detail": "Every autumn."
+      },
+      "covid": {
+        "title": "COVID-19",
+        "detail": "Yearly booster in autumn."
+      },
+      "pneumo": {
+        "title": "Pneumococcal",
+        "detail": "Once from 60."
+      },
+      "zoster": {
+        "title": "Shingles",
+        "detail": "Two doses, 2 to 6 months apart."
+      },
+      "rsv": {
+        "title": "RSV",
+        "detail": "Once from 75."
+      }
+    }
+  },
+  "steps": {
+    "title": "What happens at your visit",
+    "intro": "Four steps, so you know what to expect – even the first time."
+  },
+  "team": {
+    "title": "Our doctors",
+    "intro": "Four doctors with different areas of focus and one shared approach: we take time for your questions.",
+    "focusLabel": "Focus areas",
+    "portraitOf": "Portrait of {name}"
+  },
+  "reviews": {
+    "title": "What patients say",
+    "intro": "Experiences from our practice – in their own words.",
+    "carousel": "Reviews",
+    "prev": "Previous review",
+    "next": "Next review",
+    "slide": "{n} of {total}",
+    "goto": "Go to review {n} of {total}",
+    "stars": "{rating} out of {max} stars",
+    "sample": "Sample text",
+    "sampleNote": "Placeholder – to be replaced by real, approved reviews",
+    "footText": "Have you visited us? Your review helps other patients choose their family doctor.",
+    "write": "Write a review on Google",
+    "read": "Read all reviews"
+  },
+  "faq": {
+    "title": "Common questions"
+  },
+  "visit": {
+    "title": "Visiting us",
+    "addressTitle": "Address and contact",
+    "phone": "Phone",
+    "email": "Email",
+    "mapConsent": "The map is loaded from Google Maps. This sends data such as your IP address to Google.",
+    "mapLoad": "Load map",
+    "mapOpen": "Open in Google Maps",
+    "mapTitle": "Map: Ärztezentrum Dr. Sharafi, Müllerstraße 138",
+    "transitTitle": "Getting here by public transport",
+    "lineU6": "U-Bahn line U6",
+    "stopSee": "U Seestraße",
+    "walk1": "1–2 minutes on foot",
+    "tramLines": "Tram M13 and 50",
+    "tramStop": "Stop: U Seestraße",
+    "stepFree": "Step-free access",
+    "stepFreeHint": "Please call ahead if you need help",
+    "transitTodo": "Connections and walking time to be confirmed by the practice.",
+    "firstTitle": "Bring to your first appointment"
+  }
 }

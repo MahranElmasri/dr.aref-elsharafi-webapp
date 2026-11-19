@@ -111,18 +111,20 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T8: Tasks and services
 **Description:** Content files and components for "Wie können wir Ihnen helfen?" (3 tasks) and "Unsere Leistungen" (lead card + 5 cards with included lists and Vorsorge link).
 **Acceptance criteria:**
-- [ ] Copy comes from `content/tasks.ts` and `content/services.ts` in all locales
-- [ ] Grid matches the sample; no overflow at 320 px
+- [x] Copy comes from `content/tasks.ts` and `content/services.ts` in all locales
+- [x] Grid matches the sample; no overflow at 320 px
+**Done 2026-11-19:** content generated from the sample's dictionary (no retyping) into `content/tasks.ts` and `content/services.ts`; icons in `components/sectionIcons.ts`.
 **Verification:** standard; screenshots.
 **Dependencies:** T6
-**Files:** `content/{tasks,services}.ts`, `components/home/{Tasks,Services}.tsx`, `components/icons.tsx`
+**Files:** `content/{tasks,services}.ts`, `components/home/{Tasks,Services,SectionIcon}.tsx`, `components/sectionIcons.ts`
 **Scope:** M
 
 ### T9: Visit steps and Vorsorge-Finder
 **Description:** "So läuft Ihr Besuch ab" band, and the age-based finder. Move the rules into `lib/care.ts` with unit tests; the finder is a client component with labelled input, inline error and live result count.
 **Acceptance criteria:**
-- [ ] `care.ts` tests cover ages 18, 34, 35, 45, 50, 55, 65, 75 and sex filters
-- [ ] Invalid age shows the error next to the field; nothing is stored or sent
+- [x] `care.ts` tests cover ages 18, 34, 35, 45, 50, 55, 65, 75 and sex filters
+- [x] Invalid age shows the error next to the field; nothing is stored or sent
+**Done 2026-11-19:** 13 tests written first. The sample has no sex selector: sex-specific items are shown with a "Für Frauen/Für Männer" tag, so the tests check the tags instead of a filter. Checked in Chrome (AR): 45 → 6, 17 → error + aria-invalid (last result stays), 75 → 15, 34 → 3. Item texts in `messages/*.json` under `care.items`.
 **Verification:** `pnpm test`; manual keyboard check.
 **Dependencies:** T6
 **Files:** `content/steps.ts`, `lib/care.ts`, `tests/unit/care.test.ts`, `components/home/{Steps,CareFinder}.tsx`
@@ -131,8 +133,9 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T10: Team and reviews
 **Description:** Doctor cards with circular portraits, and the reviews slider (initials avatars, stars, dots, arrows, keyboard, RTL, no autoplay). `reviews.ts` requires `consentConfirmed: true`; sample reviews keep the "Beispieltext" badge via a `sample: true` flag.
 **Acceptance criteria:**
-- [ ] Slider works with buttons, dots, swipe and arrow keys in LTR and RTL
-- [ ] A review without consent does not type-check
+- [x] Slider works with buttons, dots, swipe and arrow keys in LTR and RTL
+- [x] A review without consent does not type-check
+**Done 2026-11-19:** Consent is enforced by the zod union in `content/schema.ts` (`sample: true` or `consentConfirmed: true` + `source`), so a review without consent fails `check:content` and `next build` (2 tests), not `tsc` itself, since the data is a parsed literal. Sample reviews are dropped when `VERCEL_ENV=production` (verified: no section and no "Beispieltext" in production HTML). Client components now get only the message namespaces they use. Slider checked in Chrome in DE and AR at 1280 and 400 px: next/prev, dots, arrow keys (mirrored in RTL). Fixed a re-snap bug: a zero-length `scrollBy` jumped back to slide 1.
 **Verification:** standard; manual slider check in DE and AR.
 **Dependencies:** T6
 **Files:** `content/{doctors,reviews}.ts`, `components/home/{Team,Reviews,ReviewSlider}.tsx`
@@ -141,17 +144,18 @@ Standard verification for every task: `pnpm typecheck && pnpm lint && pnpm test 
 ### T11: FAQ and visit section
 **Description:** FAQ accordion, address and contact card, transit list, first-visit checklist and the two-click Google Maps loader.
 **Acceptance criteria:**
-- [ ] No request to any Google origin before clicking "Karte laden"
-- [ ] After the click the iframe loads with a localized title
-- [ ] FAQ is keyboard-operable
+- [x] No request to any Google origin before clicking "Karte laden"
+- [x] After the click the iframe loads with a localized title
+- [x] FAQ is keyboard-operable
+**Done 2026-11-19:** Checked in Chrome (DE, AR): 0 external resources and 0 iframes before the click; after the click one `www.google.com/maps/embed` iframe with the localized title. The embed URL is schema-checked to `https://www.google.com/maps/embed?…`. The FAQ uses native `<details>/<summary>` (keyboard by default, works without JS); a keyboard e2e check follows in T15. Arabic FAQ phone numbers are wrapped in Unicode isolates so "030 45490303" and "116 117" keep their digit order. The transit "bitte bestätigen" note is hidden in production. FAQ and first-visit texts live in `content/{faq,firstVisit}.ts`.
 **Verification:** standard; Network panel check.
 **Dependencies:** T6
 **Files:** `content/faq.ts`, `components/home/{Faq,Visit,ConsentMap}.tsx`
 **Scope:** M
 
 ## Checkpoint C: Home complete
-- [ ] All sample sections present in DE/EN/AR
-- [ ] No third-party request on first load
+- [x] All sample sections present in DE/EN/AR
+- [x] No third-party request on first load (resource timing in Chrome, DE and AR)
 - [ ] Review with human
 
 ---

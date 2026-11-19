@@ -47,7 +47,50 @@ export const practice = z.strictObject({
   phone: z.strictObject({ display: z.string().min(1), tel: z.string().regex(/^\+\d{6,15}$/) }),
   email: z.email(),
   doctolibUrl: z.url({ protocol: /^https$/ }),
+  googleMapsUrl: z.url({ protocol: /^https$/ }),
+  /** Loaded only after the visitor clicks "Karte laden". */
+  googleMapsEmbedUrl: z.url({ protocol: /^https$/, hostname: /^www\.google\.com$/ }).refine((u) => u.startsWith("https://www.google.com/maps/embed?")),
 });
+
+export const serviceIcon = z.enum(["practice", "checkup", "vaccine", "lab", "chronic", "home"]);
+export const service = z.strictObject({
+  icon: serviceIcon,
+  title: localized,
+  summary: localized,
+  items: z.array(localized).min(1),
+  linksToCareFinder: z.literal(true).optional(),
+});
+
+export const task = z.strictObject({
+  icon: z.enum(["calendar", "prescription", "sicknote"]),
+  title: localized,
+  text: localized,
+  action: z.enum(["book", "call"]),
+});
+
+export const step = z.strictObject({ title: localized, text: localized });
+
+export const doctor = z.strictObject({
+  name: z.string().min(1),
+  portrait: z.enum(["aref", "nahas", "zoghbi", "koeniger"]),
+  role: localized,
+  focus: z.array(localized),
+});
+
+const reviewBase = {
+  quote: localized,
+  author: localized,
+  meta: localized,
+  tag: localized,
+  rating: z.number().int().min(1).max(5),
+};
+/** A review is either a marked placeholder, or real with the author's confirmed consent. */
+export const review = z.union([
+  z.strictObject({ ...reviewBase, sample: z.literal(true) }),
+  z.strictObject({ ...reviewBase, consentConfirmed: z.literal(true), source: z.enum(["google", "jameda", "doctolib", "direct"]) }),
+]);
+
+export const faqItem = z.strictObject({ q: localized, a: localized });
 
 export type Localized = z.infer<typeof localized>;
 export type Session = z.infer<typeof session>;
@@ -55,3 +98,4 @@ export type OpeningHours = z.infer<typeof openingHours>;
 export type Weekday = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 export type Closure = z.infer<typeof closure>;
 export type Notice = z.infer<typeof notice>;
+export type Review = z.infer<typeof review>;

@@ -60,14 +60,14 @@ T14 images · T15 e2e/axe · T16 Lighthouse + preview deploy (after all)
 - [ ] Review with human
 
 ### Phase 3: Home sections
-- [ ] T8 "Wie können wir helfen" tasks and services sections
-- [ ] T9 Visit steps and Vorsorge-Finder (`lib/care.ts`, TDD)
-- [ ] T10 Team and reviews slider
-- [ ] T11 FAQ and visit section with transit and consent-gated map
+- [x] T8 "Wie können wir helfen" tasks and services sections
+- [x] T9 Visit steps and Vorsorge-Finder (`lib/care.ts`, TDD)
+- [x] T10 Team and reviews slider
+- [x] T11 FAQ and visit section with transit and consent-gated map
 
 ### Checkpoint C: Home complete
-- [ ] Every sample section present in DE/EN/AR
-- [ ] No request to google.com before clicking "Karte laden"
+- [x] Every sample section present in DE/EN/AR
+- [x] No request to google.com before clicking "Karte laden"
 - [ ] Review with human
 
 ### Phase 4: Contact, legal, quality

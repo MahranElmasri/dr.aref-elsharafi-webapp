@@ -1,10 +1,15 @@
 import { setRequestLocale } from "next-intl/server";
+import { Faq } from "@/components/home/Faq";
 import { Hero } from "@/components/home/Hero";
+import { CareFinder } from "@/components/home/CareFinder";
+import { Reviews } from "@/components/home/Reviews";
+import { Services } from "@/components/home/Services";
+import { Steps } from "@/components/home/Steps";
+import { Tasks } from "@/components/home/Tasks";
+import { Visit } from "@/components/home/Visit";
+import { Team } from "@/components/home/Team";
 import { WeekStrip } from "@/components/home/WeekStrip";
 import { BUILT_AT } from "@/lib/buildTime";
-
-// Placeholder sections so header navigation can be checked; real sections arrive in T8–T11.
-const sections = ["leistungen", "vorsorge", "team", "kontakt", "fragen"];
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
@@ -13,13 +18,14 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
     <main id="inhalt">
       <Hero builtAt={BUILT_AT} />
       <WeekStrip builtAt={BUILT_AT} />
-      <div className="wrap">
-        {sections.map((id) => (
-          <section key={id} id={id} className="min-h-[50vh] py-16">
-            <h2 className="text-heading">{id}</h2>
-          </section>
-        ))}
-      </div>
+      <Tasks />
+      <Services />
+      <Steps />
+      <CareFinder />
+      <Team />
+      <Reviews />
+      <Faq />
+      <Visit />
     </main>
   );
 }

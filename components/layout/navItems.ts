@@ -4,5 +4,5 @@ export const navItems = [
   { href: "#vorsorge", key: "care" },
   { href: "#team", key: "team" },
   { href: "#kontakt", key: "contact" },
-  { href: "#fragen", key: "faq" },
+  // { href: "#fragen", key: "faq" },
 ] as const;

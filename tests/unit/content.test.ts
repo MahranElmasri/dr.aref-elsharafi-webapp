@@ -8,6 +8,13 @@ import "@/content/practice";
 import "@/content/hours";
 import "@/content/closures";
 import "@/content/notice";
+import "@/content/services";
+import "@/content/tasks";
+import "@/content/steps";
+import "@/content/doctors";
+import "@/content/reviews";
+import "@/content/faq";
+import "@/content/firstVisit";
 
 describe("content schemas", () => {
   it("rejects localized text without German", () => {
@@ -29,6 +36,18 @@ describe("content schemas", () => {
     expect(schema.closure.safeParse({ from: "2026-12-24", to: "2026-12-23", message }).success).toBe(false);
     expect(schema.closure.safeParse({ from: "24.12.2026", to: "2026-12-31", message }).success).toBe(false);
     expect(schema.closure.safeParse({ from: "2026-12-24", to: "2026-12-24", message }).success).toBe(true);
+  });
+});
+
+describe("reviews", () => {
+  const base = { quote: { de: "Sehr gut" }, author: { de: "A. B." }, meta: { de: "Patient" }, tag: { de: "Vorsorge" }, rating: 5 };
+  it("rejects a real review without confirmed consent", () => {
+    expect(schema.review.safeParse({ ...base, source: "google" }).success).toBe(false);
+    expect(schema.review.safeParse({ ...base, consentConfirmed: false, source: "google" }).success).toBe(false);
+  });
+  it("accepts a consented review and a marked sample", () => {
+    expect(schema.review.safeParse({ ...base, consentConfirmed: true, source: "google" }).success).toBe(true);
+    expect(schema.review.safeParse({ ...base, sample: true }).success).toBe(true);
   });
 });
 
