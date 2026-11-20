@@ -137,7 +137,7 @@
       },
       "bowel": {
         "title": "Stool test for hidden blood",
-        "detail": "Yearly from 50 to 54, every 2 years from 55."
+        "detail": "Every 2 years from 50 – as an alternative to a colonoscopy."
       },
       "colon": {
         "title": "Colonoscopy",
@@ -169,7 +169,7 @@
       },
       "covid": {
         "title": "COVID-19",
-        "detail": "Yearly booster in autumn."
+        "detail": "Every year in autumn. With certain medical conditions also at a younger age – please ask us."
       },
       "pneumo": {
         "title": "Pneumococcal",

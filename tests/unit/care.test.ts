@@ -23,7 +23,7 @@ describe("dueFor", () => {
     [35, ["breastExam", "cervix", "checkup", "hep", "mmr", "skin", "td"]],
     [45, ["breastExam", "cervix", "checkup", "hep", "mmr", "prostate", "skin", "td"]],
     [50, ["bowel", "breast", "breastExam", "cervix", "checkup", "colon", "hep", "lung", "mmr", "prostate", "skin", "td"]],
-    [65, ["aorta", "bowel", "breast", "breastExam", "cervix", "checkup", "colon", "covid", "flu", "hep", "lung", "pneumo", "prostate", "skin", "td", "zoster"]],
+    [65, ["aorta", "bowel", "breast", "breastExam", "cervix", "checkup", "colon", "flu", "hep", "lung", "pneumo", "prostate", "skin", "td", "zoster"]],
     [75, ["aorta", "bowel", "breast", "breastExam", "cervix", "checkup", "colon", "covid", "flu", "hep", "lung", "pneumo", "prostate", "rsv", "skin", "td", "zoster"]],
   ])("at %i returns the age-matched recommendations", (age, expected) => {
     expect(keys(age)).toEqual([...expected].sort());

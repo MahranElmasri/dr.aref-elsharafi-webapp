@@ -24,6 +24,7 @@ export const careRules: readonly CareRule[] = [
   { key: "checkup", type: "exam", min: 35, where: "p" },
   { key: "hep", type: "exam", min: 35, where: "p" },
   { key: "skin", type: "exam", min: 35, where: "p" },
+  // iFOBT every 2 years from 50 for everyone since 1 April 2025.
   { key: "bowel", type: "exam", min: 50, where: "p" },
   { key: "colon", type: "exam", min: 50, where: "s" },
   { key: "aorta", type: "exam", min: 65, sex: "m", where: "p" },
@@ -37,7 +38,8 @@ export const careRules: readonly CareRule[] = [
   { key: "breastExam", type: "exam", min: 30, sex: "f", where: "s" },
   { key: "td", type: "vacc", min: 18, where: "p" },
   { key: "flu", type: "vacc", min: 60, where: "p" },
-  { key: "covid", type: "vacc", min: 60, where: "p" },
+  // STIKO since July 2026: standard yearly dose from 75; younger people only with an indication (see detail text).
+  { key: "covid", type: "vacc", min: 75, where: "p" },
   { key: "pneumo", type: "vacc", min: 60, where: "p" },
   { key: "zoster", type: "vacc", min: 60, where: "p" },
   { key: "rsv", type: "vacc", min: 75, where: "p" },
