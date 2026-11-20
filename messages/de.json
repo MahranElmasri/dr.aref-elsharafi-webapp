@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Hausarzt in Berlin-Wedding – Ärztezentrum Dr. Sharafi und Kollegen",
-    "description": "Hausarztpraxis in der Müllerstraße 138, Berlin-Wedding. Alle Kassen und privat, barrierefrei, Termine online über Doctolib. Wir sprechen Deutsch, Englisch und Arabisch.",
+    "description": "Hausarztpraxis in Wedding, Berlin-Wedding. Alle Kassen und privat, barrierefrei, Termine online. Wir sprechen Deutsch, Englisch und Arabisch.",
     "siteName": "Ärztezentrum Dr. Sharafi und Kollegen"
   },
   "common": {
@@ -52,14 +52,22 @@
   },
   "hero": {
     "alt": "Wartezimmer der Praxis mit orangefarbenen Stühlen, Pflanzen und Blick zur Anmeldung",
-    "title": "<l>Medizin mit Vertrauen.</l> <l>Menschlich. Kompetent. Nah.</l>",
-    "lede": "Ihre Hausarztpraxis in der Müllerstraße 138: persönliche Betreuung und moderne Medizin – bei akuten Beschwerden, Vorsorge und chronischen Erkrankungen wie Diabetes, Bluthochdruck, Asthma oder COPD. Labor, EKG und Lungenfunktion direkt vor Ort.",
+    "title": "<l>Medizin mit Vertrauen.</l> <l>Menschlich. Kompetent. Nah.</l> <sub>Ihre Gesundheit liegt uns am Herzen.</sub>",
+    "lede": "Unser erfahrenes Ärzteteam bietet Ihnen persönliche Betreuung, moderne Diagnostik und umfassende medizinische Versorgung – von der Vorsorge bis zur Behandlung chronischer Erkrankungen.",
+    "focus": {
+      "label": "Unsere Bereiche",
+      "general": "Allgemeinmedizin",
+      "internal": "Innere Medizin",
+      "prevention": "Vorsorge & Impfungen",
+      "diagnostics": "Moderne Diagnostik"
+    },
     "book": "Termin online buchen",
-    "bookNote": "In wenigen Minuten über Doctolib gebucht – ohne Konto, ohne App. Die Bestätigung kommt per E-Mail.",
+    "bookNote": "In wenigen Minuten über Doctolib gebucht. Die Bestätigung kommt per E-Mail.",
     "team": "Unser Ärzteteam kennenlernen",
-    "insurance": "Alle Kassen und Privat",
-    "insuranceHint": "Versichertenkarte bitte mitbringen",
+    "insurance": "Alle Kassen und privat",
+    "insuranceHint": "Neue Patientinnen und Patienten willkommen",
     "access": "Barrierefreier Zugang",
+    "transit": "<ubahn>U6</ubahn> U Seestraße <nw> <tram>M13</tram> <tram>50</tram> Tram</nw>",
     "languages": "Deutsch, Englisch, Arabisch",
     "languagesHint": "Sprachen in der Sprechstunde",
     "emAfter": "Außerhalb der Sprechzeiten",
@@ -96,11 +104,11 @@
   },
   "care": {
     "title": "Welche Vorsorge steht für Sie an?",
-    "intro": "Geben Sie Ihr Alter ein. Sie sehen, welche Untersuchungen und Impfungen Ihre Krankenkasse übernimmt.",
+    "intro": "Geben Sie Ihr Alter ein. Sie sehen, welche Früherkennungsuntersuchungen und Impfungen die gesetzlichen Krankenkassen übernehmen. Privatversicherte fragen bitte bei ihrer Versicherung nach.",
     "ageLabel": "Ihr Alter",
     "ageUnit": "Jahre",
     "ageError": "Bitte geben Sie ein Alter zwischen 18 und 110 ein.",
-    "note": "Kassenleistungen und Impfempfehlungen der STIKO, Stand 2025. Bei Vorerkrankungen gelten oft andere Abstände, sprechen Sie uns an. Ihre Eingabe wird nicht gespeichert oder gesendet.",
+    "note": "Kassenleistungen und Impfempfehlungen der STIKO, Stand 2026. Bei Vorerkrankungen gelten oft andere Abstände, sprechen Sie uns an. Ihre Eingabe wird nicht gespeichert oder gesendet.",
     "book": "Vorsorgetermin buchen",
     "exams": "Untersuchungen",
     "vacc": "Impfungen",
@@ -108,7 +116,8 @@
     "forMen": "Für Männer",
     "atPractice": "Bei uns in der Praxis",
     "atSpecialist": "In einer Fachpraxis",
-    "count": "Mit {age} Jahren: {count} Empfehlungen",
+    "atPracticeAdvice": "Beratung bei uns, CT in einer Fachpraxis",
+    "count": "Mit {age} Jahren: {count} Empfehlungen – einige nur für Frauen oder nur für Männer",
     "items": {
       "checkupY": {
         "title": "Gesundheits-Check-up",
@@ -173,6 +182,22 @@
       "rsv": {
         "title": "RSV",
         "detail": "Einmal ab 75."
+      },
+      "lung": {
+        "title": "Lungenkrebs-Früherkennung",
+        "detail": "Für starke Raucherinnen und Raucher, auch ehemalige, von 50 bis 75: einmal im Jahr eine Niedrigdosis-CT. Wir beraten Sie, ob Sie Anspruch haben."
+      },
+      "chlamydia": {
+        "title": "Chlamydien-Test",
+        "detail": "Jährlich bis 25."
+      },
+      "breastExam": {
+        "title": "Tastuntersuchung der Brust",
+        "detail": "Jährlich ab 30."
+      },
+      "mmr": {
+        "title": "Masern, Mumps, Röteln",
+        "detail": "Einmal, wenn Sie nach 1970 geboren sind und Ihr Impfschutz unklar ist."
       }
     }
   },
@@ -182,8 +207,8 @@
   },
   "team": {
     "title": "Unser Ärzteteam",
-    "intro": "Vier Ärzte mit unterschiedlichen Schwerpunkten und einer gemeinsamen Haltung: Wir nehmen uns Zeit für Ihre Fragen.",
-    "focusLabel": "Schwerpunkte",
+    "intro": "Vier Ärzte mit unterschiedlichen Tätigkeitsschwerpunkten und einer gemeinsamen Haltung: Wir nehmen uns Zeit für Ihre Fragen.",
+    "focusLabel": "Tätigkeitsschwerpunkte",
     "portraitOf": "Porträt von {name}"
   },
   "reviews": {
@@ -199,7 +224,8 @@
     "sampleNote": "Platzhalter – wird durch echte, freigegebene Bewertungen ersetzt",
     "footText": "Waren Sie bei uns? Ihre Bewertung hilft anderen Patientinnen und Patienten bei der Wahl ihrer Hausarztpraxis.",
     "write": "Bewertung auf Google schreiben",
-    "read": "Alle Bewertungen lesen"
+    "read": "Alle Bewertungen lesen",
+    "titleEmpty": "Ihre Erfahrung zählt"
   },
   "faq": {
     "title": "Häufige Fragen"
@@ -221,7 +247,6 @@
     "tramStop": "Haltestelle U Seestraße",
     "stepFree": "Barrierefreier Zugang",
     "stepFreeHint": "Bitte vorher anrufen, wenn Sie Hilfe brauchen",
-    "transitTodo": "Verbindungen und Gehzeit bitte von der Praxis bestätigen lassen.",
     "firstTitle": "Zum ersten Termin mitbringen"
   },
   "contact": {

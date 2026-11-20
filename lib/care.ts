@@ -1,5 +1,5 @@
 // Vorsorge-Finder rules: statutory (GKV) check-ups and STIKO vaccination recommendations
-// for adults, as of 2025. Medical content: changes need practice sign-off.
+// for adults, as of 2026. Medical content: changes need practice sign-off.
 // Texts live in messages/*.json under care.items.<key>.
 
 export type CareRule = {
@@ -11,13 +11,13 @@ export type CareRule = {
   max?: number;
   /** Only for women ("f") or men ("m"); shown as a tag, not filtered */
   sex?: "f" | "m";
-  /** "p" = at our practice, "s" = at a specialist practice */
-  where: "p" | "s";
+  /** "p" = at our practice, "s" = at a specialist practice, "a" = advice here, test at a specialist */
+  where: "p" | "s" | "a";
 };
 
 export type CareKey =
   | "checkupY" | "checkup" | "hep" | "skin" | "bowel" | "colon" | "aorta" | "cervix" | "breast" | "prostate"
-  | "td" | "flu" | "covid" | "pneumo" | "zoster" | "rsv";
+  | "lung" | "chlamydia" | "breastExam" | "td" | "flu" | "covid" | "pneumo" | "zoster" | "rsv" | "mmr";
 
 export const careRules: readonly CareRule[] = [
   { key: "checkupY", type: "exam", min: 18, max: 34, where: "p" },
@@ -30,12 +30,19 @@ export const careRules: readonly CareRule[] = [
   { key: "cervix", type: "exam", min: 20, sex: "f", where: "s" },
   { key: "breast", type: "exam", min: 50, max: 75, sex: "f", where: "s" },
   { key: "prostate", type: "exam", min: 45, sex: "m", where: "s" },
+  // Statutory benefit since 1 April 2026, for heavy current or former smokers.
+  { key: "lung", type: "exam", min: 50, max: 75, where: "a" },
+  // G-BA: up to the 25th birthday, so the last whole age is 24.
+  { key: "chlamydia", type: "exam", min: 18, max: 24, sex: "f", where: "s" },
+  { key: "breastExam", type: "exam", min: 30, sex: "f", where: "s" },
   { key: "td", type: "vacc", min: 18, where: "p" },
   { key: "flu", type: "vacc", min: 60, where: "p" },
   { key: "covid", type: "vacc", min: 60, where: "p" },
   { key: "pneumo", type: "vacc", min: 60, where: "p" },
   { key: "zoster", type: "vacc", min: 60, where: "p" },
   { key: "rsv", type: "vacc", min: 75, where: "p" },
+  // STIKO: one dose for adults born after 1970 with unclear protection. Derived from the year so it never goes stale.
+  { key: "mmr", type: "vacc", min: 18, max: new Date().getFullYear() - 1971, where: "p" },
 ];
 
 export const MIN_AGE = 18;

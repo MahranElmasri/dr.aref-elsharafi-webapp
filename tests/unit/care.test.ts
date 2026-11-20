@@ -16,25 +16,33 @@ describe("parseAge", () => {
 
 describe("dueFor", () => {
   it.each([
-    [18, ["checkupY", "td"]],
-    [34, ["cervix", "checkupY", "td"]],
-    [35, ["cervix", "checkup", "hep", "skin", "td"]],
-    [45, ["cervix", "checkup", "hep", "prostate", "skin", "td"]],
-    [50, ["bowel", "breast", "cervix", "checkup", "colon", "hep", "prostate", "skin", "td"]],
-    [55, ["bowel", "breast", "cervix", "checkup", "colon", "hep", "prostate", "skin", "td"]],
-    [65, ["aorta", "bowel", "breast", "cervix", "checkup", "colon", "covid", "flu", "hep", "pneumo", "prostate", "skin", "td", "zoster"]],
-    [75, ["aorta", "bowel", "breast", "cervix", "checkup", "colon", "covid", "flu", "hep", "pneumo", "prostate", "rsv", "skin", "td", "zoster"]],
+    [18, ["checkupY", "chlamydia", "mmr", "td"]],
+    [24, ["checkupY", "chlamydia", "cervix", "mmr", "td"]],
+    [25, ["checkupY", "cervix", "mmr", "td"]],
+    [34, ["breastExam", "cervix", "checkupY", "mmr", "td"]],
+    [35, ["breastExam", "cervix", "checkup", "hep", "mmr", "skin", "td"]],
+    [45, ["breastExam", "cervix", "checkup", "hep", "mmr", "prostate", "skin", "td"]],
+    [50, ["bowel", "breast", "breastExam", "cervix", "checkup", "colon", "hep", "lung", "mmr", "prostate", "skin", "td"]],
+    [65, ["aorta", "bowel", "breast", "breastExam", "cervix", "checkup", "colon", "covid", "flu", "hep", "lung", "pneumo", "prostate", "skin", "td", "zoster"]],
+    [75, ["aorta", "bowel", "breast", "breastExam", "cervix", "checkup", "colon", "covid", "flu", "hep", "lung", "pneumo", "prostate", "rsv", "skin", "td", "zoster"]],
   ])("at %i returns the age-matched recommendations", (age, expected) => {
     expect(keys(age)).toEqual([...expected].sort());
   });
 
-  it("ends the mammography screening after 75", () => {
+  it("ends the mammography and lung screening after 75", () => {
     expect(keys(76)).not.toContain("breast");
+    expect(keys(76)).not.toContain("lung");
+  });
+
+  it("offers MMR up to the age of people born in 1971", () => {
+    const last = new Date().getFullYear() - 1971;
+    expect(keys(last)).toContain("mmr");
+    expect(keys(last + 1)).not.toContain("mmr");
   });
 
   it("tags sex-specific recommendations", () => {
     const sex = Object.fromEntries(careRules.filter((r) => r.sex).map((r) => [r.key, r.sex]));
-    expect(sex).toEqual({ aorta: "m", prostate: "m", cervix: "f", breast: "f" });
+    expect(sex).toEqual({ aorta: "m", prostate: "m", cervix: "f", breast: "f", chlamydia: "f", breastExam: "f" });
   });
 
   it("keeps the order: check-ups first, then vaccinations", () => {

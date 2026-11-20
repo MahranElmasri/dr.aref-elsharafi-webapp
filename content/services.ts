@@ -118,9 +118,9 @@ export const services = z.array(service).min(1).parse([
       "ar": "المختبر والتشخيص"
     },
     "summary": {
-      "de": "Untersuchungen direkt bei uns – ohne Umweg über andere Praxen.",
-      "en": "Tests done here, so you don't need to go to another practice.",
-      "ar": "فحوصات داخل عيادتنا دون الحاجة إلى عيادة أخرى."
+      "de": "Viele Untersuchungen direkt bei uns – Sie sparen sich zusätzliche Termine.",
+      "en": "Many tests done right here – no extra appointments elsewhere.",
+      "ar": "كثير من الفحوصات تُجرى لدينا مباشرة، فتوفّر على نفسك مواعيد إضافية."
     },
     "items": [
       {

@@ -21,7 +21,9 @@ export function CareFinder() {
       <b>{t(`items.${r.key}.title`)}</b>
       <p>{t(`items.${r.key}.detail`)}</p>
       <span className="tags">
-        {r.where === "p" ? <span className="tag here">{t("atPractice")}</span> : <span className="tag">{t("atSpecialist")}</span>}
+        {r.where === "p" ? <span className="tag here">{t("atPractice")}</span>
+          : r.where === "a" ? <span className="tag here">{t("atPracticeAdvice")}</span>
+          : <span className="tag">{t("atSpecialist")}</span>}
         {r.sex && <span className="tag">{r.sex === "f" ? t("forWomen") : t("forMen")}</span>}
       </span>
     </li>

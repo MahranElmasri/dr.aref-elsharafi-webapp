@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Family doctor in Berlin-Wedding – Ärztezentrum Dr. Sharafi und Kollegen",
-    "description": "GP practice at Müllerstraße 138, Berlin-Wedding. All statutory and private insurance, step-free access, online booking via Doctolib. We speak German, English and Arabic.",
+    "description": "GP practice at Wedding, Berlin-Wedding. All statutory and private insurance, step-free access, online booking. We speak German, English and Arabic.",
     "siteName": "Ärztezentrum Dr. Sharafi and colleagues"
   },
   "common": {
@@ -52,14 +52,22 @@
   },
   "hero": {
     "alt": "The practice waiting room with orange chairs, plants and a view of reception",
-    "title": "<l>Medicine built on trust.</l> <l>Personal. Skilled. Close by.</l>",
-    "lede": "Your family practice at Müllerstraße 138: personal care and modern medicine – for acute illness, check-ups and chronic conditions such as diabetes, high blood pressure, asthma or COPD. Lab tests, ECG and lung function on site.",
+    "title": "<l>Medicine built on trust.</l> <l>Personal. Skilled. Close by.</l> <sub>Your health is close to our hearts.</sub>",
+    "lede": "Our experienced team of doctors offers you personal care, modern diagnostics and comprehensive medical care – from check-ups to the treatment of chronic conditions.",
+    "focus": {
+      "label": "What we cover",
+      "general": "General practice",
+      "internal": "Internal medicine",
+      "prevention": "Check-ups & vaccinations",
+      "diagnostics": "Modern diagnostics"
+    },
     "book": "Book online",
-    "bookNote": "Booked in a few minutes through Doctolib – no account, no app. Your confirmation arrives by email.",
+    "bookNote": "Book through Doctolib in a few minutes. Your confirmation arrives by email.",
     "team": "Meet our doctors",
     "insurance": "All public and private insurance",
-    "insuranceHint": "Please bring your insurance card",
+    "insuranceHint": "New patients welcome",
     "access": "Step-free access",
+    "transit": "<ubahn>U6</ubahn> Seestraße · <nw>Tram <tram>M13</tram> <tram>50</tram></nw>",
     "languages": "German, English, Arabic",
     "languagesHint": "Languages spoken in consultations",
     "emAfter": "Outside opening hours",
@@ -96,11 +104,11 @@
   },
   "care": {
     "title": "Which check-ups are due for you?",
-    "intro": "Enter your age to see which check-ups and vaccinations your statutory health insurance covers.",
+    "intro": "Enter your age to see which screenings and vaccinations statutory health insurance covers. If you have private insurance, please check with your insurer.",
     "ageLabel": "Your age",
     "ageUnit": "years",
     "ageError": "Please enter an age between 18 and 110.",
-    "note": "Statutory insurance benefits and STIKO vaccination recommendations, as of 2025. Different intervals often apply if you have existing conditions, so please ask us. Your entry is not saved or sent.",
+    "note": "Statutory insurance benefits and STIKO vaccination recommendations, updated 2026. Different intervals often apply if you have existing conditions, so please ask us. Your entry is not saved or sent.",
     "book": "Book a check-up",
     "exams": "Check-ups",
     "vacc": "Vaccinations",
@@ -108,7 +116,8 @@
     "forMen": "For men",
     "atPractice": "At our practice",
     "atSpecialist": "At a specialist practice",
-    "count": "At {age}: {count} recommendations",
+    "atPracticeAdvice": "Advice here, CT at a specialist practice",
+    "count": "At {age}: {count} recommendations – some only for women or only for men",
     "items": {
       "checkupY": {
         "title": "Health check-up",
@@ -173,6 +182,22 @@
       "rsv": {
         "title": "RSV",
         "detail": "Once from 75."
+      },
+      "lung": {
+        "title": "Lung cancer screening",
+        "detail": "For heavy smokers and former heavy smokers aged 50 to 75: a low-dose CT scan once a year. We'll advise you on whether you qualify."
+      },
+      "chlamydia": {
+        "title": "Chlamydia test",
+        "detail": "Yearly up to age 25."
+      },
+      "breastExam": {
+        "title": "Breast examination",
+        "detail": "Yearly from 30."
+      },
+      "mmr": {
+        "title": "Measles, mumps and rubella",
+        "detail": "Once, if you were born after 1970 and aren't sure you're protected."
       }
     }
   },
@@ -199,7 +224,8 @@
     "sampleNote": "Placeholder – to be replaced by real, approved reviews",
     "footText": "Have you visited us? Your review helps other patients choose their family doctor.",
     "write": "Write a review on Google",
-    "read": "Read all reviews"
+    "read": "Read all reviews",
+    "titleEmpty": "Your experience matters"
   },
   "faq": {
     "title": "Common questions"
@@ -221,7 +247,6 @@
     "tramStop": "Stop: U Seestraße",
     "stepFree": "Step-free access",
     "stepFreeHint": "Please call ahead if you need help",
-    "transitTodo": "Connections and walking time to be confirmed by the practice.",
     "firstTitle": "Bring to your first appointment"
   },
   "contact": {

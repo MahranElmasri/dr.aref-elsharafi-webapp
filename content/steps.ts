@@ -24,14 +24,14 @@ export const steps = z.array(step).min(1).parse([
     "text": {
       "de": "Bringen Sie Ihre Versichertenkarte, Ihren Medikationsplan und vorhandene Befunde mit.",
       "en": "Bring your insurance card, your medication plan and any previous test results.",
-      "ar": "أحضر بطاقة التأمين وخطة الأدوية ونتائج الفحوصات السابقة إن وجدت."
+      "ar": "أحضر بطاقة التأمين (Versichertenkarte) وخطة الأدوية (Medikationsplan) ونتائج الفحوصات السابقة إن وجدت."
     }
   },
   {
     "title": {
       "de": "Gespräch und Untersuchung",
       "en": "Consultation and examination",
-      "ar": "الحديث والفحص"
+      "ar": "الاستشارة والفحص"
     },
     "text": {
       "de": "Wir hören zu, untersuchen Sie und machen Labor oder EKG bei Bedarf direkt vor Ort.",

@@ -10,7 +10,7 @@ export const firstVisit = z.array(localized).min(1).parse([
   },
   {
     "de": "Ihren aktuellen Medikationsplan",
-    "en": "Your current medication list",
+    "en": "Your current medication plan",
     "ar": "قائمة الأدوية الحالية"
   },
   {
@@ -21,6 +21,6 @@ export const firstVisit = z.array(localized).min(1).parse([
   {
     "de": "Überweisungen, falls vorhanden",
     "en": "Referrals, if you have any",
-    "ar": "التحويلات الطبية إن وُجدت"
+    "ar": "التحويلات الطبية (Überweisung) إن وُجدت"
   }
 ]);

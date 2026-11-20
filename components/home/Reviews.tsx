@@ -20,16 +20,17 @@ export async function Reviews() {
   const t = await getTranslations("reviews");
   const newTab = (await getTranslations("footer"))("newTab");
   const visible = reviews.filter((r) => showSamples || !("sample" in r));
-  if (!visible.length) return null;
+  // No approved reviews yet: keep only the Google links, no quotes and no "in their words" intro.
+  const hasReviews = visible.length > 0;
 
   return (
     <section className="block" id="stimmen" aria-labelledby="rev-h">
       <div className="wrap">
         <div className="section-head minor">
-          <h2 id="rev-h">{t("title")}</h2>
-          <p>{t("intro")}</p>
+          <h2 id="rev-h">{t(hasReviews ? "title" : "titleEmpty")}</h2>
+          {hasReviews && <p>{t("intro")}</p>}
         </div>
-        <ReviewSlider
+        {hasReviews && <ReviewSlider
           labels={{
             carousel: t("carousel"), prev: t("prev"), next: t("next"),
             goto: visible.map((_, i) => t("goto", { n: i + 1, total: visible.length })),
@@ -61,7 +62,7 @@ export async function Reviews() {
               </li>
             );
           })}
-        </ReviewSlider>
+        </ReviewSlider>}
         <div className="rev-foot">
           <p>{t("footText")}</p>
           <div className="rev-actions">

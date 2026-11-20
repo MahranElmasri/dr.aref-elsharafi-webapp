@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { practice } from "@/content/practice";
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/icons";
 import { LanguageSwitch } from "./LanguageSwitch";
@@ -12,6 +12,9 @@ export function Header() {
   const t = useTranslations();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  // Page whose hero booking button is in view; tied to the path so a stale value never hides the bar.
+  const [heroCtaOn, setHeroCtaOn] = useState<string | null>(null);
+  const pathname = usePathname();
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   // Escape closes the mobile menu and returns focus to its button.
@@ -39,6 +42,15 @@ export function Header() {
     targets.forEach((el) => spy.observe(el));
     return () => spy.disconnect();
   }, []);
+
+  // The mobile booking bar steps aside while the hero's own booking button is on screen.
+  useEffect(() => {
+    const cta = document.querySelector(".hero-actions");
+    if (!cta) return;
+    const io = new IntersectionObserver(([e]) => setHeroCtaOn(e.isIntersecting ? pathname : null));
+    io.observe(cta);
+    return () => io.disconnect();
+  }, [pathname]);
 
   return (
     <header className="site">
@@ -84,6 +96,11 @@ export function Header() {
           </button>
         </div>
       </div>
+      {/* Phones: the header has no room for a booking button, so it sits fixed at the bottom. */}
+      <a className="btn btn-primary book-bar" href={practice.doctolibUrl} target="_blank" rel="noopener" hidden={heroCtaOn === pathname}>
+        {t("nav.book")}
+        <span className="sr-only"> {t("footer.newTab")}</span>
+      </a>
     </header>
   );
 }

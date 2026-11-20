@@ -11,9 +11,9 @@ export const faq = z.array(faqItem).min(1).parse([
       "ar": "كيف أحصل على موعد؟"
     },
     "a": {
-      "de": "Online über Doctolib – ohne Konto und ohne App. Oder Sie rufen uns während der Sprechzeiten unter 030 45490303 an.",
-      "en": "Book online through Doctolib – no account or app needed. Or call us on 030 45490303 during opening hours.",
-      "ar": "احجز عبر Doctolib دون حساب أو تطبيق، أو اتصل بنا خلال أوقات العمل على الرقم ⁦030 45490303⁩."
+      "de": "Online über Doctolib oder telefonisch während der Sprechzeiten unter 030 45490303.",
+      "en": "Online through Doctolib, or by phone during opening hours on 030 45490303.",
+      "ar": "عبر Doctolib على الإنترنت، أو هاتفيًا خلال أوقات العمل على الرقم ⁦030 45490303⁩."
     }
   },
   {

@@ -28,27 +28,12 @@ test.describe("contact form", () => {
   });
 });
 
-test.describe("review slider", () => {
-  for (const { path, forward } of [{ path: "/", forward: "ArrowRight" }, { path: "/ar", forward: "ArrowLeft" }]) {
-    test(`${path}: buttons, dots and keys`, async ({ page }) => {
-      await page.setViewportSize({ width: 1440, height: 900 });
-      await page.emulateMedia({ reducedMotion: "reduce" });
-      await page.goto(`${path}#stimmen`);
-      const dots = page.locator(".dot-btn");
-      const current = () => dots.evaluateAll((d) => d.findIndex((b) => b.getAttribute("aria-current") === "true"));
-      await expect(page.locator(".rev-prev")).toBeDisabled();
-      await page.locator(".rev-next").click();
-      await expect.poll(current).toBe(1);
-      await dots.nth(2).click();
-      await expect.poll(current).toBe(2);
-      await expect(page.locator(".rev-next")).toBeDisabled();
-      await page.locator(".reviews").focus();
-      await page.keyboard.press(forward === "ArrowRight" ? "ArrowLeft" : "ArrowRight");
-      await expect.poll(current).toBe(1);
-      await page.keyboard.press(forward);
-      await expect.poll(current).toBe(2);
-    });
-  }
+test("reviews: without approved reviews only the Google links show", async ({ page }) => {
+  await page.goto("/#stimmen");
+  const section = page.locator("#stimmen");
+  await expect(section.locator("h2")).toHaveText("Ihre Erfahrung zählt");
+  await expect(section.locator(".review")).toHaveCount(0);
+  await expect(section.locator(".rev-actions a")).toHaveCount(2);
 });
 
 test("FAQ opens with the keyboard", async ({ page }) => {
@@ -64,8 +49,8 @@ test("FAQ opens with the keyboard", async ({ page }) => {
 test("care finder updates with the age", async ({ page }) => {
   await page.goto("/#vorsorge");
   await page.fill("#age", "75");
-  await expect(page.locator(".care-count")).toHaveText("Mit 75 Jahren: 15 Empfehlungen");
+  await expect(page.locator(".care-count")).toHaveText("Mit 75 Jahren: 17 Empfehlungen – einige nur für Frauen oder nur für Männer");
   await page.fill("#age", "17");
   await expect(page.locator("#age-err")).toBeVisible();
-  await expect(page.locator(".care-count")).toHaveText("Mit 75 Jahren: 15 Empfehlungen");
+  await expect(page.locator(".care-count")).toHaveText("Mit 75 Jahren: 17 Empfehlungen – einige nur für Frauen oder nur für Männer");
 });

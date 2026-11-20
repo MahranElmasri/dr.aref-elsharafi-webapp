@@ -15,7 +15,7 @@ export async function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <p className="foot-name">
-              <span className="mark"><CrossMark /></span>
+             
               <span>{t("brand.name")}</span>
             </p>
             <address>

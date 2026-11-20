@@ -61,8 +61,8 @@ export const doctors = z.array(doctor).min(1).parse([
     "portrait": "zoghbi",
     "role": {
       "de": "Facharzt für Allgemeinmedizin",
-      "en": "Specialist in general medicine",
-      "ar": "أخصائي طب عام"
+      "en": "Specialist in family medicine",
+      "ar": "أخصائي طب الأسرة"
     },
     "focus": [
       {
@@ -71,9 +71,9 @@ export const doctors = z.array(doctor).min(1).parse([
         "ar": "الأمراض المعدية"
       },
       {
-        "de": "Lungenentzündung",
-        "en": "Pneumonia",
-        "ar": "الالتهاب الرئوي"
+        "de": "Atemwegserkrankungen",
+        "en": "Respiratory illness",
+        "ar": "أمراض الجهاز التنفسي"
       },
       {
         "de": "Diabetes",
@@ -87,8 +87,8 @@ export const doctors = z.array(doctor).min(1).parse([
     "portrait": "koeniger",
     "role": {
       "de": "Facharzt für Allgemeinmedizin",
-      "en": "Specialist in general medicine",
-      "ar": "أخصائي طب عام"
+      "en": "Specialist in family medicine",
+      "ar": "أخصائي طب الأسرة"
     },
     "focus": [
       {

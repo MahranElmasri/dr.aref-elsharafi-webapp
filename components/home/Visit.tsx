@@ -6,9 +6,6 @@ import type { Locale } from "@/i18n/routing";
 import { ConsentMap } from "./ConsentMap";
 import { ContactForm } from "./ContactForm";
 
-// Internal reminder for the practice; never shown on the production site.
-const showTodo = process.env.VERCEL_ENV !== "production";
-
 const Tick = () => (
   <span className="tick" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}><path d="M20 6 9 17l-5-5" /></svg>
@@ -57,7 +54,6 @@ export async function Visit() {
                 <span><b>{t("stepFree")}</b><small>{t("stepFreeHint")}</small></span>
               </li>
             </ul>
-            {showTodo && <p className="todo">{t("transitTodo")}</p>}
           </div>
           <div className="card">
             <h3>{t("firstTitle")}</h3>
