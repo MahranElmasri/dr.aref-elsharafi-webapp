@@ -64,7 +64,8 @@ export const service = z.strictObject({
 export const task = z.strictObject({
   icon: z.enum(["calendar", "prescription", "sicknote"]),
   title: localized,
-  text: localized,
+  lede: localized,
+  points: z.array(localized).min(1).max(4),
   action: z.enum(["book", "call"]),
 });
 

@@ -1,49 +1,65 @@
 import { z } from "zod";
 import { task } from "./schema";
 
-// "Wie können wir Ihnen helfen?" cards. action: "book" links to Doctolib, "call" to the practice phone.
+// "Wie können wir Ihnen helfen?" cards: one short lede plus up to four checklist points.
+// action: "book" links to Doctolib, "call" to the practice phone.
 // Process details (prescriptions, sick notes) need practice sign-off.
 export const tasks = z.array(task).parse([
   {
     "icon": "calendar",
-    "title": {
-      "de": "Termin vereinbaren",
-      "en": "Book an appointment",
-      "ar": "حجز موعد"
+    "title": { "de": "Termin vereinbaren", "en": "Book an appointment", "ar": "حجز موعد" },
+    "lede": {
+      "de": "Schnell und unkompliziert zu Ihrem Termin.",
+      "en": "Get your appointment quickly and easily.",
+      "ar": "احصلوا على موعدكم بسرعة وسهولة."
     },
-    "text": {
-      "de": "Buchen Sie online über Doctolib oder rufen Sie uns während der Sprechzeiten an.",
-      "en": "Book online with Doctolib, or call us during opening hours.",
-      "ar": "احجز عبر الإنترنت من خلال Doctolib، أو اتصل بنا خلال أوقات العمل."
-    },
+    "points": [
+      { "de": "Online über Doctolib buchen", "en": "Book online via Doctolib", "ar": "الحجز عبر الإنترنت من خلال Doctolib" },
+      { "de": "Telefonisch während unserer Sprechzeiten", "en": "By phone during our opening hours", "ar": "هاتفيًا خلال أوقات عمل العيادة" }
+    ],
     "action": "book"
   },
   {
     "icon": "prescription",
-    "title": {
-      "de": "Rezept oder Überweisung",
-      "en": "Prescription or referral",
-      "ar": "وصفة طبية أو تحويل"
+    "title": { "de": "Rezept oder Überweisung", "en": "Prescription or referral", "ar": "وصفة طبية أو تحويل" },
+    "lede": {
+      "de": "Folgerezepte und Überweisungen ohne Umwege.",
+      "en": "Repeat prescriptions and referrals made simple.",
+      "ar": "تجديد الوصفات والتحويلات بلا تعقيد."
     },
-    "text": {
-      "de": "Folgerezepte bestellen Sie telefonisch. Gesetzlich Versicherte lösen das E-Rezept mit ihrer Versichertenkarte direkt in der Apotheke ein. Überweisungen liegen an der Anmeldung für Sie bereit. Bringen Sie einmal im Quartal Ihre Versichertenkarte mit.",
-      "en": "Order repeat prescriptions by phone. With statutory insurance, the pharmacy reads your e-prescription from your insurance card. Referrals are ready for you at reception. Bring your insurance card once each quarter.",
-      "ar": "اطلب تجديد الوصفات الطبية هاتفيًا. إذا كان تأمينك قانونيًا، تقرأ الصيدلية الوصفة الإلكترونية (E-Rezept) من بطاقة التأمين فتستلم الدواء مباشرة. أما التحويلات (Überweisung) فتجدها جاهزة في الاستقبال. أحضر بطاقة التأمين (Versichertenkarte) مرة واحدة كل ربع سنة."
-    },
+    "points": [
+      { "de": "Folgerezepte telefonisch bestellen", "en": "Order repeat prescriptions by phone", "ar": "طلب تجديد الوصفات هاتفيًا" },
+      {
+        "de": "Gesetzlich Versicherte lösen das E-Rezept mit der Versichertenkarte in der Apotheke ein",
+        "en": "With statutory insurance, redeem your e-prescription at the pharmacy with your insurance card",
+        "ar": "للتأمين القانوني: صرف الوصفة الإلكترونية (\u2066E\u2011Rezept\u2069) من الصيدلية ببطاقة التأمين"
+      },
+      { "de": "Überweisungen an der Anmeldung abholen", "en": "Collect referrals at reception", "ar": "استلام التحويلات (Überweisung) من الاستقبال" },
+      { "de": "Versichertenkarte einmal pro Quartal vorlegen", "en": "Present your insurance card once per quarter", "ar": "تقديم بطاقة التأمين (Versichertenkarte) مرة كل ربع سنة" }
+    ],
     "action": "call"
   },
   {
     "icon": "sicknote",
-    "title": {
-      "de": "Krankschreibung",
-      "en": "Sick note",
-      "ar": "شهادة مرضية"
+    "title": { "de": "Krankschreibung", "en": "Sick note", "ar": "شهادة مرضية" },
+    "lede": {
+      "de": "Bitte kontaktieren Sie uns am ersten Krankheitstag.",
+      "en": "Please contact us on your first day of illness.",
+      "ar": "يُرجى التواصل معنا في اليوم الأول من المرض."
     },
-    "text": {
-      "de": "Melden Sie sich am ersten Krankheitstag. Bei leichten Beschwerden können wir bekannte Patientinnen und Patienten nach telefonischer Rücksprache bis zu fünf Tage krankschreiben. Bei gesetzlich Versicherten geht die Krankschreibung elektronisch an die Krankenkasse – Sie müssen nichts einreichen. Ihren Arbeitgeber informieren Sie bitte selbst.",
-      "en": "Contact us on your first day of illness. If you are already our patient and have mild symptoms, we can issue a sick note for up to five days after a phone consultation. With statutory insurance, your sick note goes electronically to your insurer – you don't need to hand anything in. Please tell your employer yourself.",
-      "ar": "تواصل معنا في أول يوم من مرضك. إذا كنت من مرضانا وكانت أعراضك خفيفة، يمكننا إصدار شهادة مرضية لمدة تصل إلى خمسة أيام بعد استشارة هاتفية. للمؤمَّن عليهم تأمينًا قانونيًا تُرسَل الشهادة المرضية (Krankschreibung) إلكترونيًا إلى شركة التأمين الصحي، ولا تحتاج إلى تقديم أي ورقة. يرجى إبلاغ صاحب العمل بنفسك."
-    },
+    "points": [
+      {
+        "de": "Bei leichten Beschwerden bis zu fünf Tage nach telefonischer Rücksprache – für bekannte Patientinnen und Patienten",
+        "en": "Up to five days after a phone consultation for mild symptoms – for existing patients",
+        "ar": "حتى خمسة أيام بعد استشارة هاتفية في حال الأعراض الخفيفة – للمرضى المسجَّلين لدينا"
+      },
+      {
+        "de": "Gesetzlich Versicherte: elektronische Übermittlung an die Krankenkasse",
+        "en": "Statutory insurance: sent electronically to your health insurer",
+        "ar": "للتأمين القانوني: إرسال الشهادة (Krankschreibung) إلكترونيًا إلى شركة التأمين"
+      },
+      { "de": "Ihren Arbeitgeber informieren Sie bitte selbst", "en": "Please inform your employer yourself", "ar": "يُرجى إبلاغ صاحب العمل بأنفسكم" }
+    ],
     "action": "call"
   }
 ]);

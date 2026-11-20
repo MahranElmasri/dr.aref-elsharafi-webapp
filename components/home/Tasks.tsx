@@ -20,9 +20,14 @@ export async function Tasks() {
             <li className="card task" key={task.icon}>
               <SectionIcon name={task.icon} />
               <h3>{pick(task.title, locale)}</h3>
-              <p>{pick(task.text, locale)}</p>
+              <p className="task-lede">{pick(task.lede, locale)}</p>
+              <ul className="task-points">
+                {task.points.map((point) => (
+                  <li key={point.de}>{pick(point, locale)}</li>
+                ))}
+              </ul>
               {task.action === "book" ? (
-                <a className="btn btn-outline" href={practice.doctolibUrl} target="_blank" rel="noopener">
+                <a className="btn btn-primary" href={practice.doctolibUrl} target="_blank" rel="noopener">
                   {t("tasks.book")}
                   <span className="sr-only"> {t("footer.newTab")}</span>
                 </a>
