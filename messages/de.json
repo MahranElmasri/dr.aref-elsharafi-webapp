@@ -208,7 +208,8 @@
   "team": {
     "title": "Unser Ärzteteam",
     "intro": "Vier Ärzte mit unterschiedlichen Tätigkeitsschwerpunkten und einer gemeinsamen Haltung: Wir nehmen uns Zeit für Ihre Fragen.",
-    "focusLabel": "Tätigkeitsschwerpunkte",
+    "servicesLabel": "Leistungen",
+    "focusLabel": "Schwerpunkte",
     "portraitOf": "Porträt von {name}"
   },
   "reviews": {

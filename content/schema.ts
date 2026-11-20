@@ -75,6 +75,8 @@ export const doctor = z.strictObject({
   name: z.string().min(1),
   portrait: z.enum(["aref", "nahas", "zoghbi", "koeniger"]),
   role: localized,
+  /** Keys of services in content/services.ts; each chip links to that service card. */
+  services: z.array(serviceIcon).min(1).max(4),
   focus: z.array(localized),
 });
 

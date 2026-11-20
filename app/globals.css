@@ -561,24 +561,51 @@
   .rev-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   /* Team */
   .team { display: grid; gap: var(--spacing-24); list-style: none; padding: 0; margin: 0; }
-  @media (min-width: 600px) { .team { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .team { grid-template-columns: repeat(4, 1fr); } }
-  .doc { background: var(--color-pure-white); border-radius: var(--radius-cards); display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: var(--spacing-32); }
+  @media (min-width: 600px) { .team { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* Four columns only where the service rows fit ("Vorsorgeuntersuchungen" needs ~250px cards). */
+  @media (min-width: 1200px) { .team { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  /* Each card is a 7-row subgrid (portrait, name, role, label, services, label, focus),
+     so sections line up across cards even when a name wraps. */
+  .doc {
+    background: var(--color-pure-white); border-radius: var(--radius-cards); border: 1px solid rgba(15, 118, 110, 0.1);
+    display: grid; grid-template-rows: subgrid; grid-row: span 7; row-gap: 0;
+    text-align: center; padding: var(--spacing-32) var(--spacing-24) var(--spacing-24);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .doc:hover { box-shadow: var(--shadow-md); border-color: rgba(15, 118, 110, 0.22); }
+  .doc .body { display: contents; }
   .doc .portrait {
-    width: 168px; height: 168px; border-radius: 50%; overflow: hidden; flex: none;
+    width: 152px; height: 152px; border-radius: 50%; overflow: hidden; justify-self: center; margin-bottom: var(--spacing-16);
     background: var(--color-portrait-bg); display: grid; place-items: center;
-    border: 6px solid var(--color-cream);
+    border: 5px solid var(--color-tint);
   }
   /* 4:5 head-and-shoulders portraits: square crop from the top keeps headroom and shoulders. */
   .doc .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; }
   .doc .portrait svg { width: 50%; height: 50%; color: var(--color-portrait-icon); }
-  .doc .body { padding: var(--spacing-24); display: flex; flex-direction: column; flex: 1; align-self: stretch; }
-  .doc .focus { justify-content: center; }
-  .doc h3 { font-size: var(--text-heading-sm); line-height: 1.25; }
-  .doc .role { color: var(--color-stone); font-size: var(--text-body-sm); margin-top: 4px; }
-  .doc .focus-label { margin-top: var(--spacing-16); padding-top: var(--spacing-16); border-top: 1px solid rgba(11, 43, 46, 0.1); font-size: 0.8125rem; color: var(--color-stone); }
-  .doc .focus { margin-top: var(--spacing-8); display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; }
-  .doc .focus li { font-size: var(--text-body-sm); background: var(--color-cream); border-radius: var(--radius-pill); padding: 4px 12px; }
+  .doc h3 { font-size: var(--text-heading-sm); line-height: 1.25; align-self: end; }
+  .doc .role { color: var(--color-primary); font-weight: 500; font-size: var(--text-body-sm); margin-top: 4px; }
+  .doc .doc-label {
+    margin-top: var(--spacing-24); font-size: var(--text-caption); font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--color-ink-soft); text-align: start;
+  }
+  .doc .role + .doc-label { padding-top: var(--spacing-16); border-top: 1px solid rgba(11, 43, 46, 0.1); margin-top: var(--spacing-16); }
+  [lang="ar"] .doc .doc-label { letter-spacing: 0; }
+  .doc-services { list-style: none; padding: 0; margin: 4px 0 0; align-self: start; }
+  .doc-services li + li { border-top: 1px solid rgba(11, 43, 46, 0.08); }
+  .doc-services a {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 8px 8px;
+    margin-inline: -8px; border-radius: 10px;
+    color: var(--color-deep-ink); font-size: var(--text-body-sm); font-weight: 500; line-height: 1.3; text-decoration: none; text-align: start;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .doc-services a::after { content: "→"; color: var(--color-mist-strong); flex: none; transition: transform 0.15s ease, color 0.15s ease; }
+  [dir="rtl"] .doc-services a::after { content: "←"; }
+  .doc-services a:hover { background: var(--color-tint); color: var(--color-primary-hover); }
+  .doc-services a:hover::after { color: var(--color-primary); transform: translateX(3px); }
+  [dir="rtl"] .doc-services a:hover::after { transform: translateX(-3px); }
+  @media (prefers-reduced-motion: reduce) { .doc, .doc-services a, .doc-services a::after { transition: none; } }
+  .doc .focus { list-style: none; padding: 0; margin: var(--spacing-8) 0 0; display: flex; flex-wrap: wrap; gap: 6px; align-self: start; }
+  .doc .focus li { font-size: 0.8125rem; color: var(--color-ink-soft); background: var(--color-cream); border-radius: var(--radius-pill); padding: 4px 12px; }
 
 }
 

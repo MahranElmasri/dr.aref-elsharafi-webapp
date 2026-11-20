@@ -16,7 +16,7 @@ export async function Services() {
         </div>
         <ul className="cards">
           {services.map((s, i) => (
-            <li className={i === 0 ? "card lead" : "card"} key={s.icon}>
+            <li className={i === 0 ? "card lead" : "card"} key={s.icon} id={`leistung-${s.icon}`}>
               <SectionIcon name={s.icon} />
               <h3>{pick(s.title, locale)}</h3>
               <p>{pick(s.summary, locale)}</p>

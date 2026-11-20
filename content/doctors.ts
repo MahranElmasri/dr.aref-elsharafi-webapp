@@ -7,6 +7,7 @@ export const doctors = z.array(doctor).min(1).parse([
   {
     "name": "Dr. Aref Sharafi",
     "portrait": "aref",
+    "services": ["checkup", "chronic", "vaccine", "lab"],
     "role": {
       "de": "Hausärztlich tätiger Internist",
       "en": "Internist working in general practice",
@@ -33,6 +34,7 @@ export const doctors = z.array(doctor).min(1).parse([
   {
     "name": "Dr. Nabil Elnahas",
     "portrait": "nahas",
+    "services": ["checkup", "chronic", "vaccine", "lab"],
     "role": {
       "de": "Hausärztlich tätiger Internist",
       "en": "Internist working in general practice",
@@ -59,6 +61,7 @@ export const doctors = z.array(doctor).min(1).parse([
   {
     "name": "Dr. Abdel Jabar Zoghbi",
     "portrait": "zoghbi",
+    "services": ["checkup", "chronic", "vaccine"],
     "role": {
       "de": "Facharzt für Allgemeinmedizin",
       "en": "Specialist in family medicine",
@@ -85,6 +88,7 @@ export const doctors = z.array(doctor).min(1).parse([
   {
     "name": "Dr. Guido Königer",
     "portrait": "koeniger",
+    "services": ["checkup", "chronic", "vaccine", "lab"],
     "role": {
       "de": "Facharzt für Allgemeinmedizin",
       "en": "Specialist in family medicine",

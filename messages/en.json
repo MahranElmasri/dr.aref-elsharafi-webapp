@@ -208,6 +208,7 @@
   "team": {
     "title": "Our doctors",
     "intro": "Four doctors with different areas of focus and one shared approach: we take time for your questions.",
+    "servicesLabel": "Services",
     "focusLabel": "Focus areas",
     "portraitOf": "Portrait of {name}"
   },
