@@ -10,8 +10,8 @@ export const steps = z.array(step).min(1).parse([
       "ar": "احجز موعدًا"
     },
     "text": {
-      "de": "Online über Doctolib oder telefonisch während der Sprechzeiten.",
-      "en": "Online with Doctolib, or by phone during opening hours.",
+      "de": "Online oder telefonisch während der Sprechzeiten.",
+      "en": "Online, or by phone during opening hours.",
       "ar": "عبر Doctolib أو هاتفيًا خلال أوقات العمل."
     }
   },
