@@ -142,7 +142,7 @@
   .brand-text > span { display: block; font-size: var(--text-caption); color: var(--color-stone); }
   nav.main ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
   nav.main a {
-    display: block; color: var(--color-deep-ink); text-decoration: none; font-weight: 500; font-size: var(--text-body-sm);
+    display: flex; align-items: center; min-height: 44px; color: var(--color-deep-ink); text-decoration: none; font-weight: 500; font-size: var(--text-body-sm);
     padding: 10px 10px; border-radius: var(--radius-pill); white-space: nowrap;
     transition: background-color .15s, color .15s;
   }
@@ -199,7 +199,7 @@
 
   /* Footer */
   footer.site { background: var(--color-footer); color: var(--color-footer-text); padding-block: var(--spacing-64) var(--spacing-32); margin-top: var(--spacing-80); font-size: var(--text-body-sm); }
-  footer.site a { color: var(--color-pure-white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+  footer.site a { color: var(--color-pure-white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
   footer.site a:hover { text-decoration: underline; text-underline-offset: 3px; }
   footer.site :focus-visible { outline-color: var(--color-pure-white); }
   .foot-grid { display: grid; gap: var(--spacing-40); }
@@ -224,7 +224,9 @@
   }
   .foot-em-title { display: flex; align-items: center; gap: 8px; color: var(--color-pure-white); font-weight: 600; }
   .foot-em-title svg { width: 18px; height: 18px; color: var(--color-alert-soft); }
-  footer.site .foot-em a { font-weight: 700; color: var(--color-alert-pale); margin-inline-end: 6px; min-width: 28px; text-align: center; }
+  /* Number column + label column, so a wrapped label hangs under itself instead of inheriting the 44px link line box. */
+  .foot-em p:not(.foot-em-title) { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; }
+  footer.site .foot-em a { font-weight: 700; color: var(--color-alert-pale); min-width: 44px; }
   @media (min-width: 900px) { .foot-em { grid-template-columns: auto 1fr 1.3fr 1fr; align-items: center; } }
   .legal { margin-top: var(--spacing-32); padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-wrap: wrap; align-items: center; gap: 8px var(--spacing-24); color: var(--color-footer-muted); }
 }
@@ -259,6 +261,8 @@
   .hero-focus { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; width: 100%; }
   @media (min-width: 600px) { .hero-focus { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .hero-focus li { display: flex; align-items: center; gap: 10px; font-size: var(--text-body-sm); font-weight: 500; line-height: 1.25; color: var(--color-pure-white); min-width: 0; overflow-wrap: break-word; }
+  /* Let long single words ("Allgemeinmedizin") hyphenate inside the 2-column grid instead of running into the next item. */
+  .hero-focus li > span:last-child { min-width: 0; hyphens: auto; }
   @media (min-width: 600px) { .hero-focus li { flex-direction: column; text-align: center; gap: 8px; } }
   .hf-icon { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.28); }
   .hf-icon svg { width: 20px; height: 20px; }
@@ -266,7 +270,7 @@
   .hero-panel .btn-outline { background: rgba(255, 255, 255, 0.12); color: var(--color-pure-white); border-color: rgba(255, 255, 255, 0.55); }
   .hero-panel .btn-outline:hover { background: rgba(255, 255, 255, 0.24); }
   .hero-panel :focus-visible { outline-color: var(--color-pure-white); }
-  .hero-team { display: inline-flex; align-items: center; gap: 12px; margin-top: var(--spacing-8); color: var(--color-pure-white); font-size: var(--text-body-sm); font-weight: 500; text-decoration: none; }
+  .hero-team { display: inline-flex; align-items: center; min-height: 44px; gap: 12px; margin-top: var(--spacing-8); color: var(--color-pure-white); font-size: var(--text-body-sm); font-weight: 500; text-decoration: none; }
   .hero-team:hover span:last-child { text-decoration: underline; }
   .hero-team .faces { display: flex; }
   .hero-team .faces img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; border: 2px solid rgba(255, 255, 255, 0.85); }
@@ -288,7 +292,9 @@
   .hero-info .hi-status a:hover b { text-decoration: underline; }
   .hero-info .hi-status .dot { margin-top: 6px; }
   .hero-info .hi-em svg { color: var(--color-alert); }
-  .hero-info .hi-em a { color: var(--color-alert); font-weight: 600; text-decoration: none; white-space: nowrap; display: inline-block; min-width: 44px; padding: 11px 2px; margin-block: -11px; text-align: center; }
+  /* Tap area grows via ::after so the number keeps its natural width and no gap appears before the separator. */
+  .hero-info .hi-em a { position: relative; color: var(--color-alert); font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .hero-info .hi-em a::after { content: ""; position: absolute; inset: -12px -8px; }
   .hero-info .hi-em a:hover { text-decoration: underline; }
   @media (min-width: 768px) {
     .hero-stage { padding: 160px 32px 96px; }

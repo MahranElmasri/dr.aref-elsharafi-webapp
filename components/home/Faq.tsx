@@ -8,7 +8,7 @@ export async function Faq() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("faq");
   return (
-    <section className="block tight" id="fragen" aria-labelledby="faq-h">
+    <section className="block" id="fragen" aria-labelledby="faq-h">
       <div className="wrap">
         <div className="section-head minor">
           <h2 id="faq-h">{t("title")}</h2>
