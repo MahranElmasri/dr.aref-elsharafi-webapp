@@ -33,7 +33,9 @@ export async function Hero({ builtAt }: { builtAt: number }) {
             alt={t("alt")}
             priority
             quality={85}
-            sizes="(min-width: 1280px) 1136px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)"
+            // object-fit: cover scales the 16:9 photo to the stage height, so it renders wider than the stage.
+            // These are the measured rendered widths (stage ~714px tall on desktop, ~820px tablet, ~940px+ phone).
+            sizes="(min-width: 1024px) 1280px, (min-width: 768px) 1460px, 1680px"
             placeholder="blur"
           />
           <div className="hero-panel">

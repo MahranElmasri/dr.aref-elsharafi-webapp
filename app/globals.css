@@ -298,6 +298,8 @@
   .hero-info .hi-em a:hover { text-decoration: underline; }
   @media (min-width: 768px) {
     .hero-stage { padding: 160px 32px 96px; }
+    /* Tablet: the strip beside the panel shows the reception door, not a half-cut TV screen. */
+    .hero-img { object-position: 60% 50%; }
     .hero-panel { padding: var(--spacing-32); }
     .hero .hero-panel h1 { font-size: 2.5rem; }
   }

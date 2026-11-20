@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
       siteName: t("siteName"),
       locale: ogLocale[locale],
       url: localeUrl(locale, "/"),
-      images: [{ url: "/assets/hero.jpg", width: 1774, height: 887 }],
+      images: [{ url: "/assets/hero.jpg", width: 1672, height: 941 }],
     },
     // Preview deployments stay out of search results.
     robots: process.env.VERCEL_ENV === "production" ? undefined : { index: false, follow: false },
