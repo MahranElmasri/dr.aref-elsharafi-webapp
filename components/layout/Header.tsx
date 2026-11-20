@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -7,6 +8,7 @@ import { practice } from "@/content/practice";
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { navItems } from "./navItems";
+import logoMark from "@/public/assets/logo-mark.png";
 
 export function Header() {
   const t = useTranslations();
@@ -57,6 +59,7 @@ export function Header() {
       <div className="wrap">
         <div className="navbar">
           <Link className="brand" href="/">
+            <Image className="logo-mark" src={logoMark} alt="" width={40} height={40} priority />
             <span className="brand-text">
               <b>{t("brand.name")}</b>
               <span>{t("brand.sub")}</span>

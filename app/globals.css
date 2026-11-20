@@ -136,10 +136,9 @@
     padding-block: 8px; padding-inline: 24px 8px; min-height: 64px;
   }
   .brand { display: flex; align-items: center; min-height: 44px; gap: 12px; text-decoration: none; color: var(--color-deep-ink); margin-inline-end: auto; min-width: 0; line-height: 1.2; }
-  .mark { width: 40px; height: 40px; flex: none; border-radius: 12px; background: var(--color-primary); color: var(--color-pure-white); display: grid; place-items: center; }
-  .mark svg { width: 20px; height: 20px; }
+  .logo-mark { width: 40px; height: 40px; flex: none; display: block; }
   .brand-text { min-width: 0; flex: none; }
-  .brand b { display: block; font-family: var(--font-serif); font-weight: 400; font-size: 1.1875rem; white-space: nowrap; }
+  .brand b { display: block; font-family: var(--font-serif); font-weight: 400; font-size: 1.0625rem; white-space: nowrap; }
   .brand-text > span { display: block; font-size: var(--text-caption); color: var(--color-stone); }
   nav.main ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
   nav.main a {
@@ -181,7 +180,8 @@
     .brand-text { flex: 1 1 auto; }
     .brand-text > span { display: none; }
     .brand { gap: 10px; }
-    .brand b { font-size: 1rem; line-height: 1.2; white-space: normal; }
+    .brand b { font-size: 0.9375rem; line-height: 1.2; white-space: normal; }
+    .logo-mark { width: 36px; height: 36px; }
     .navbar { gap: var(--spacing-8); padding-inline-start: 20px; }
   }
 
